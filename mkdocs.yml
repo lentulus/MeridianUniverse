@@ -3,6 +3,10 @@ site_url: https://lentulus.github.io/MeridianUniverse/
 nav:
   - Home: index.md
   - About: about.md
+  - Projects:
+    - Worlds: Projects/worlds.md
+    - ColonyModels: Projects/colonymodels.md
+    - WorldMaps: Projects/worldmaps.md
 theme:
   name: material
 docs_dir: UniverseNotes
