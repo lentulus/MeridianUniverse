@@ -1,3 +1,3 @@
 # About
 
-Now infused with obsidian still
+Documents and musings on tools to manage a science fiction spacefaring universe.
