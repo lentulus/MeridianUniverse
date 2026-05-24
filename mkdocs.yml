@@ -10,6 +10,7 @@ nav:
     - WorldMaps: Projects/worldmaps.md
 theme:
   name: material
+  logo: assets/images/empire.svg
 docs_dir: UniverseNotes
 plugins:
   - search
