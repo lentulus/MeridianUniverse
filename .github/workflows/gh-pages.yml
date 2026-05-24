@@ -8,19 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v4.1.0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5.1.0
-        with:
-          python-version: '3.x'
-
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.1.0
