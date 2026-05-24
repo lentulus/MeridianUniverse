@@ -1,9 +1,10 @@
-site_name: Meridian Universe Docs
+site_name: Meridian Universe
 site_url: https://lentulus.github.io/MeridianUniverse/
 nav:
   - Home: index.md
   - About: about.md
 theme:
   name: material
+docs_dir: UniverseNotes
 plugins:
   - search
