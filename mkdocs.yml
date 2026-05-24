@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - About: about.md
   - Projects:
+    - Meridian: Projects/meridian.md
     - Worlds: Projects/worlds.md
     - ColonyModels: Projects/colonymodels.md
     - WorldMaps: Projects/worldmaps.md
