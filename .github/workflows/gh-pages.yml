@@ -21,6 +21,15 @@ jobs:
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.1.0
+        with:
+          python-version: '3.x'
+
       - name: Install dependencies
         run: |
           pip install mkdocs mkdocs-material
