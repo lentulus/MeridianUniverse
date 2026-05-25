@@ -9,7 +9,8 @@ nav:
     - Worlds: Projects/worlds.md
     - ColonyModels: Projects/colonymodels.md
     - WorldMaps: Projects/worldmaps.md
-theme:
+  - Models:
+    - Math Behind the Colony Models: Models/turchin-equations.md
   name: material
   logo: assets/images/empire.svg
 docs_dir: UniverseNotes
