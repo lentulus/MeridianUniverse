@@ -11,12 +11,14 @@
             "id": "d9862ab81e2a382c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/images/empire.svg"
+                "file": "about.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "empire"
+              "icon": "lucide-file",
+              "title": "about"
             }
           }
         ]
@@ -183,21 +185,23 @@
   },
   "active": "d9862ab81e2a382c",
   "lastOpenFiles": [
+    "Projects/AI.md",
+    "Projects/AI and this project.md",
+    "Projects/worlds.md",
+    "Projects/colonymodels.md",
+    "about.md",
     "assets/images/map_with_scale.jpeg",
+    "assets/images/empire.svg",
     "Blog",
     "FutureHistory",
     "Welcome.md",
     "index.md",
-    "assets/images/empire.svg",
     "assets/images/Spaceship_and_Sun_emblem.svg",
     "assets/images",
     "assets",
     "asssets",
-    "about.md",
-    "Projects/colonymodels.md",
     "Projects/meridian.md",
     "Projects/worldmaps.md",
-    "Projects/worlds.md",
     "Projects"
   ]
 }
