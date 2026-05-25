@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reference/turchin-equations.md",
+                "file": "Projects/colonymodels.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "turchin-equations"
+              "title": "colonymodels"
             }
           }
         ]
@@ -185,11 +185,11 @@
   },
   "active": "16a7f8b0d59a17ae",
   "lastOpenFiles": [
-    "reference/3turchin.pdf",
     "reference/turchin-equations.md",
     "Projects/colonymodels.md",
-    "Projects/meridian.md",
     "reference/colony-model.md",
+    "reference/3turchin.pdf",
+    "Projects/meridian.md",
     "Projects/worldmaps.md",
     "reference/colony-sim-design.md",
     "assets/images/map_with_scale.jpeg",

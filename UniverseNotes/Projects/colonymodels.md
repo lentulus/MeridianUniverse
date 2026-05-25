@@ -18,7 +18,7 @@ R&D sandbox for prototyping interstellar-colony simulation models — demographi
 - Shared: TypeScript types for Run, Event, Snapshot, ParamsC
 - Port 5173 (client dev), 8001 (server) — separate from MeridianWorlds on 8000
 
-[Backing Maths](turchin-equations) from the work of Peter Turchin.
+[Backing Maths](../reference/turchin-equations.md)from the work of Peter Turchin.
 
 **Current status (as of 2026-05-24):**
 - Slice 0 setup complete: test harness (vitest, fast-check, supertest) wired across all workspaces; `shared/` workspace created
