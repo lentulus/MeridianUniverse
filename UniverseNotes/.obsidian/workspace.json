@@ -11,14 +11,12 @@
             "id": "d9862ab81e2a382c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/images/empire.svg"
               },
-              "icon": "lucide-file",
-              "title": "index"
+              "icon": "lucide-image",
+              "title": "empire"
             }
           }
         ]
@@ -185,6 +183,11 @@
   },
   "active": "d9862ab81e2a382c",
   "lastOpenFiles": [
+    "assets/images/map_with_scale.jpeg",
+    "Blog",
+    "FutureHistory",
+    "Welcome.md",
+    "index.md",
     "assets/images/empire.svg",
     "assets/images/Spaceship_and_Sun_emblem.svg",
     "assets/images",
@@ -195,7 +198,6 @@
     "Projects/meridian.md",
     "Projects/worldmaps.md",
     "Projects/worlds.md",
-    "index.md",
     "Projects"
   ]
 }
