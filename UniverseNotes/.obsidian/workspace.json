@@ -11,14 +11,32 @@
             "id": "16a7f8b0d59a17ae",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "reference/3turchin.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "3turchin"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cea932794751c4f6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6dd5d228e35fee4",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/colonymodels.md",
+                "file": "Turchin related.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "colonymodels"
+              "title": "Turchin related"
             }
           }
         ]
@@ -78,7 +96,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "970cdd2ea53381bc",
@@ -94,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "about.md",
+                "file": "Turchin related.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +123,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for about"
+              "title": "Backlinks for Turchin related"
             }
           },
           {
@@ -183,32 +202,37 @@
       "bases:Create new base": false
     }
   },
-  "active": "16a7f8b0d59a17ae",
+  "active": "b6dd5d228e35fee4",
   "lastOpenFiles": [
-    "Models/turchin-equations.md",
-    "Projects/colonymodels.md",
-    "Projects/worlds.md",
-    "Models",
-    "reference/colony-model.md",
+    "Models/3turchin-equations-summary.md",
     "reference/3turchin.pdf",
-    "Projects/meridian.md",
+    "Turchin related.md",
+    "future-history-tech-levels.pdf",
+    "reference/colony-model.md",
+    "colony-model.pdf",
+    "FutureHistory/future-history-tech-levels.md",
+    "Projects/worlds.md",
+    "Architecture/server-storage-options.md",
+    "Architecture",
     "Projects/worldmaps.md",
+    "Projects/meridian.md",
+    "Projects/colonymodels.md",
+    "Projects/AI.md",
+    "Blog/2026/May 25.md",
+    "Blog/2026",
+    "Models/turchin-equations.md",
+    "Models",
     "reference/colony-sim-design.md",
     "assets/images/map_with_scale.jpeg",
     "reference",
     "assets/images/empire.svg",
     "FutureHistory/Impossibilities",
     "about.md",
-    "Projects/AI.md",
     "Projects/AI and this project.md",
     "Blog",
     "FutureHistory",
     "Welcome.md",
     "index.md",
-    "assets/images/Spaceship_and_Sun_emblem.svg",
-    "assets/images",
-    "assets",
-    "asssets",
-    "Projects"
+    "assets/images/Spaceship_and_Sun_emblem.svg"
   ]
 }

@@ -10,7 +10,7 @@ nav:
     - ColonyModels: Projects/colonymodels.md
     - WorldMaps: Projects/worldmaps.md
   - Models:
-    - Math Behind the Colony Models: Models/turchin-equations.md
+    - Math Behind the Colony Models: Models/3turchin-equations-summary.md
 theme:
   name: material
   logo: assets/images/empire.svg

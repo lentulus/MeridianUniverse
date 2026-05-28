@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(ls /Volumes/Lexar/projects/)",
-      "Read(//Volumes/Lexar/projects/**)"
+      "Read(//Volumes/Lexar/projects/**)",
+      "Bash(find /Users/lentulus/projects/Worlds -type f -name \"README*\" -o -name \"package.json\" -o -name \"pyproject.toml\" -o -name \"Cargo.toml\" -o -name \"*.md\" | head -20)",
+      "Read(//Users/lentulus/projects/worlds/**)",
+      "Bash(find /Users/lentulus/projects/Meridian/src -type f -name \"*.py\" | sort)",
+      "Read(//Users/lentulus/projects/meridian/src/**)",
+      "Read(//Users/lentulus/projects/Meridian/**)",
+      "Read(//Users/lentulus/projects/meridian/**)",
+      "Bash(python3)",
+      "Bash(sqlite3 /Users/lentulus/projects/Meridian/MeridianData/manifest.db \".schema sectors\")",
+      "Bash(grep -E \"\\\\.csv$|\\\\.txt$\")"
     ]
   }
 }
