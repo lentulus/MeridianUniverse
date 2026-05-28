@@ -204,6 +204,8 @@
   },
   "active": "b6dd5d228e35fee4",
   "lastOpenFiles": [
+    "javascripts/mathjax.js",
+    "javascripts",
     "Models/3turchin-equations-summary.md",
     "reference/3turchin.pdf",
     "Turchin related.md",
@@ -230,7 +232,6 @@
     "about.md",
     "Projects/AI and this project.md",
     "Blog",
-    "FutureHistory",
     "Welcome.md",
     "index.md",
     "assets/images/Spaceship_and_Sun_emblem.svg"
