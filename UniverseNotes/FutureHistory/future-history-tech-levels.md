@@ -10,13 +10,13 @@ Tech Level (TL) is a number indicating a society's technological sophistication.
 
 **GURPS TL scale (relevant range):**
 
-| TL | Name | Paradigm technology | Approx. Earth start (medium pace) |
-|----|------|--------------------|------------------------------------|
-| 8  | Digital Age | Computers, nuclear power, space probes | ~1980 |
-| 9  | Microtech Age | Nano-composites, wearables, quantum computing, neural interfaces | ~2030 |
-| 10 | Robotic Age | Volitional AI, molecular nanotechnology, fusion reactors for spacecraft | ~2120 |
-| 11 | Exotic Matter Age | Mature nanotechnology, sub-atomic engineering, antimatter propulsion | ~2500 |
-| 12 | Miracles Age | Full nano/exotic matter integration, self-replicating swarms, living metal | ~4000 |
+| TL  | Name              | Paradigm technology                                                        | Approx. Earth start (medium pace) |
+| --- | ----------------- | -------------------------------------------------------------------------- | --------------------------------- |
+| 8   | Digital Age       | Computers, nuclear power, space probes                                     | ~1980                             |
+| 9   | Microtech Age     | Nano-composites, wearables, quantum computing, neural interfaces           | ~2030                             |
+| 10  | Robotic Age       | Volitional AI, molecular nanotechnology, fusion reactors for spacecraft    | ~2120                             |
+| 11  | Exotic Matter Age | Mature nanotechnology, sub-atomic engineering, antimatter propulsion       | ~2500                             |
+| 12  | Miracles Age      | Full nano/exotic matter integration, self-replicating swarms, living metal | ~4000                             |
 
 Progression rates vary. A slow pace doubles or triples these dates; accelerated halves them. Superscience (FTL, gravity control, etc.) can appear at any TL as a discontinuous breakthrough.
 

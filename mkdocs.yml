@@ -3,6 +3,7 @@ site_url: https://lentulus.github.io/MeridianUniverse/
 nav:
   - Home: index.md
   - About: about.md
+  - Future History: FutureHistory/Future.md 
   - Projects:
     - AI Developed Software: Projects/AI.md
     - Meridian: Projects/meridian.md
