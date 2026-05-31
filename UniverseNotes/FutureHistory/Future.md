@@ -1,6 +1,6 @@
 # A Possible Future
 
-![[Pasted image 20260531163047.png]]
+![[GWmap.png]]
 Steffen et al, Trajectories of the Earth System in
 the Anthropocene, PNAS 2018
 
