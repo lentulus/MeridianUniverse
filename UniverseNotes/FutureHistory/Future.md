@@ -1,8 +1,9 @@
 # A Possible Future
 
-![[GWmap.png]]
-Steffen et al, Trajectories of the Earth System in
-the Anthropocene, PNAS 2018
+![Steffen et al, Trajectories of the Earth System in
+the Anthropocene, PNAS 2018]([GWmap.png])
+[GWmap.png]
+
 
 |  Year (KE)  | Domain      | Place                                                    | Event                                                                                                         |
 | :---------: | :---------- | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
