@@ -11,12 +11,14 @@
             "id": "08122fdcc5ab8936",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/images/empire.svg"
+                "file": "FutureHistory/Future.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "empire"
+              "icon": "lucide-file",
+              "title": "Future"
             }
           }
         ],
@@ -93,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/images/empire.svg",
+                "file": "FutureHistory/Future.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for empire"
+              "title": "Backlinks for Future"
             }
           },
           {
@@ -184,10 +186,11 @@
   },
   "active": "08122fdcc5ab8936",
   "lastOpenFiles": [
+    "FutureHistory/future-history-tech-levels.md",
+    "assets/images/empire.svg",
     "assets/images/GWmap.png",
     "assets/images/map_with_scale.jpeg",
     "FutureHistory/Future.md",
-    "FutureHistory/future-history-tech-levels.md",
     "FutureHistory/GWmap.png",
     "GWmap.png",
     "Projects/colonymodels.md",
@@ -215,7 +218,6 @@
     "Models",
     "reference/colony-sim-design.md",
     "reference",
-    "assets/images/empire.svg",
     "about.md",
     "Projects/AI and this project.md",
     "Welcome.md",
