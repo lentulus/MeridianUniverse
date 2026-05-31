@@ -1,0 +1,2443 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lentulus.github.io/MeridianUniverse/reference/colony-model/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Colony Growth and Development Model - Meridian Universe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#colony-growth-and-development-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Meridian Universe" class="md-header__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Meridian Universe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Colony Growth and Development Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Meridian Universe" class="md-nav__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    Meridian Universe
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FutureHistory/Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Developed Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/meridian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meridian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worlds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worlds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/colonymodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColonyModels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worldmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorldMaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Models/3turchin-equations-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Behind the Colony Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#state-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-population-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I — Population Dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I — Population Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-population-ode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total population ODE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immigration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immigration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#population-compartments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population compartments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-economic-sector-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II — Economic Sector Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II — Economic Sector Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effective-production-factor-m-wth-formula-all-sectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effective production factor M (WTH formula, all sectors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agricultural-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agricultural output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industrial-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industrial output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materials-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gdp-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GDP equivalent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-satisfaction-indices-and-relative-wage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III — Satisfaction Indices and Relative Wage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III — Satisfaction Indices and Relative Wage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-of-nutrition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard of Nutrition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-of-shelter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard of Shelter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-of-living" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard of Living
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-relative-welfare-turchin-w-analog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite relative welfare (Turchin w-analog)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-labor-market-and-wages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV — Labor Market and Wages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV — Labor Market and Wages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#labor-demand-monthly-operational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labor demand (monthly operational)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wage-turchin-eq-9-10-adapted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wage (Turchin Eq. 9 / 10 adapted)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-habitability-and-planetary-parameters-gurps-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V — Habitability and Planetary Parameters (GURPS RM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V — Habitability and Planetary Parameters (GURPS RM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habitability-modifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habitability modifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#education-rating-modifier-on-labor-productivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Education Rating modifier on labor productivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-rating-and-the-coercive-wage-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Rating and the coercive wage factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-elite-dynamics-turchin-eqs-4-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VI — Elite Dynamics (Turchin Eqs. 4 / 13)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VI — Elite Dynamics (Turchin Eqs. 4 / 13)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elite-population-ode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elite population ODE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-elite-income-turchin-eq-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative elite income (Turchin Eq. 5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vii-political-stress-indicator-turchin-psi-adapted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VII — Political Stress Indicator (Turchin PSI adapted)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VII — Political Stress Indicator (Turchin PSI adapted)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mmp-mass-mobilization-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MMP — Mass Mobilization Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emp-elite-mobilization-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMP — Elite Mobilization Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfd-state-fiscal-distress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SFD — State Fiscal Distress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-psi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full PSI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viii-fiscal-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIII — Fiscal Dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VIII — Fiscal Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#revenue-gurps-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revenue (GURPS RM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capital-maintenance-cost-wth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capital maintenance cost (WTH)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#government-operating-expenditure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Government operating expenditure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debt-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debt dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ix-off-world-trade-and-supply-chain-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IX — Off-world Trade and Supply-Chain Lag
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IX — Off-world Trade and Supply-Chain Lag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-tonnage-wth-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export tonnage (WTH formula)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade-revenue-with-transit-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade revenue with transit lag
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-citizen-loyalty-and-governance-dynamics-gurps-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X — Citizen Loyalty and Governance Dynamics (GURPS RM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="X — Citizen Loyalty and Governance Dynamics (GURPS RM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#political-track-update-wth-monthly-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Political Track update (WTH monthly roll)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citizen-loyalty-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citizen Loyalty dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gurps-rm-realm-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GURPS RM Realm Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xi-disruptions-gurps-rm-stochastic-shocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XI — Disruptions (GURPS RM / Stochastic Shocks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XI — Disruptions (GURPS RM / Stochastic Shocks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disruption-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disruption probability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disruption-effects-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disruption effects (selected)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-time-modifier-gurps-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response-time modifier (GURPS RM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xii-capital-investment-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XII — Capital Investment Dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XII — Capital Investment Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capital-purchase-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capital purchase constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capital-depreciation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capital depreciation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xiii-complete-dependency-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XIII — Complete Dependency Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xiv-measurable-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XIV — Measurable Outputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XIV — Measurable Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#threshold-values-of-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threshold values of note
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xv-parameter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XV — Parameter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="colony-growth-and-development-model">Colony Growth and Development Model</h1>
+<p>A coupled mathematical model integrating:
+- <strong>WTH</strong> = <em>World Tamer's Handbook</em> (TNE 0311) — colonial economic sectors and political mechanics
+- <strong>GURPS RM</strong> = <em>GURPS Realm Management</em> — governance, revenue, and disruption framework
+- <strong>3turchin</strong> = Turchin 2013 — structural-demographic political stress equations</p>
+<p><strong>Setting:</strong> SF colony on a habitable world ~1 year travel time from Earth (many parsecs). Colonists are functionally isolated between supply convoys. Time unit throughout: <strong>months</strong> (matching WTH's monthly turn cycle). Distances and masses in SI units; temperature in °C (human-scale); currency in colony credits [cr].</p>
+<hr />
+<h2 id="state-variables">State Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N(t)</td>
+<td>total colony population</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>E(t)</td>
+<td>elite population (administrators, officers, technical specialists)</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>e(t) = E/N</td>
+<td>relative elite fraction</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>AC(t)</td>
+<td>agricultural capital units deployed</td>
+<td>capital-units</td>
+</tr>
+<tr>
+<td>IC(t)</td>
+<td>industrial capital units deployed</td>
+<td>capital-units</td>
+</tr>
+<tr>
+<td>MC(t)</td>
+<td>materials capital units deployed</td>
+<td>capital-units</td>
+</tr>
+<tr>
+<td>PC(t)</td>
+<td>power capacity installed</td>
+<td>MW</td>
+</tr>
+<tr>
+<td>AL(t)</td>
+<td>agricultural laborers assigned</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>IL(t)</td>
+<td>industrial laborers assigned</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>ML(t)</td>
+<td>materials laborers assigned</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>D_lab(t)</td>
+<td>labor demand (full-economy analog)</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>Y(t)</td>
+<td>cumulative colony debt to Earth</td>
+<td>cr</td>
+</tr>
+<tr>
+<td>CL(t)</td>
+<td>Citizen Loyalty index</td>
+<td>dimensionless ∈ [0, 1]</td>
+</tr>
+<tr>
+<td>PT(t)</td>
+<td>Political Track level</td>
+<td>integer ∈ {−3,…,+3}</td>
+</tr>
+<tr>
+<td>w(t)</td>
+<td>relative welfare index</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>ε(t)</td>
+<td>relative elite income</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>Ψ(t)</td>
+<td>Political Stress Indicator</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="i-population-dynamics">I — Population Dynamics</h2>
+<h3 id="total-population-ode">Total population ODE</h3>
+<blockquote>
+<p><strong>Ṅ = r₀ · h(Hab) · σ(S_N) · N + I(t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r₀</td>
+<td>base annual growth rate = 0.02 y⁻¹ = 1/600 mo⁻¹</td>
+<td>mo⁻¹</td>
+</tr>
+<tr>
+<td>h(Hab)</td>
+<td>GURPS RM habitability modifier (see §V)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>σ(S_N)</td>
+<td>nutrition stress modifier (see §III)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>I(t)</td>
+<td>immigration inflow from Earth</td>
+<td>persons/month</td>
+</tr>
+</tbody>
+</table>
+<h3 id="immigration">Immigration</h3>
+<p>Colonist waves are requested at time t_req and arrive after a one-way transit of Δ = 12 months:</p>
+<blockquote>
+<p><strong>I(t) = Σ_k I_k · δ(t − t_{k,req} − 12)</strong></p>
+</blockquote>
+<p>No communication faster than transit exists; a wave, once dispatched, cannot be recalled. The colony administrator's only levers before the wave lands are requests sent 12+ months earlier.</p>
+<h3 id="population-compartments">Population compartments</h3>
+<blockquote>
+<p><strong>N_w = λ · N</strong> (working-age population, λ ≈ 0.55)</p>
+<p><strong>N_c = N_w − E</strong> (common workers available for sector assignment)</p>
+<p><strong>AFL = AL + IL + ML</strong> (assigned full laborers; AFL ≤ N_c)</p>
+</blockquote>
+<hr />
+<h2 id="ii-economic-sector-model">II — Economic Sector Model</h2>
+<h3 id="effective-production-factor-m-wth-formula-all-sectors">Effective production factor M (WTH formula, all sectors)</h3>
+<p>Given capital C_x and assigned labor L_x for sector x:</p>
+<blockquote>
+<p><strong>M_x(t) = L_x(t)</strong> if L_x &lt; C_x  (labor-limited)</p>
+<p><strong>M_x(t) = min(C_x + 0.5·(L_x − C_x), 1.5·C_x)</strong> if L_x ≥ C_x  (capital-limited with surplus-labor bonus)</p>
+</blockquote>
+<p>This encodes WTH's "output multiplier = AC + 0.5×[AL−AC]" rule. Extra labor beyond capital yields half-rate marginal output, capped at 1.5× the capital level.</p>
+<h3 id="power-constraint">Power constraint</h3>
+<blockquote>
+<p><strong>P_req(t) = p_A · AC(t) + p_I · IC(t) + p_M · MC(t)</strong></p>
+</blockquote>
+<p>If P_avail(t) &lt; P_req(t), production in all underpowered sectors is penalized by factor P_avail / P_req. (Power deficit is a hard constraint; the colony must install capacity before capital can operate at full rate.)</p>
+<h3 id="agricultural-output">Agricultural output</h3>
+<blockquote>
+<p><strong>Q_A(t) = q_A · M_A(t) · R_A · φ(t) · η(t) · min(1, P_avail/P_req)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q_A</td>
+<td>rations produced</td>
+<td>rations/month</td>
+</tr>
+<tr>
+<td>q_A</td>
+<td>base rations per effective capital unit per month</td>
+<td>rations/capital-unit/month</td>
+</tr>
+<tr>
+<td>R_A</td>
+<td>planetary richness rating (from survey, 1–5)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>φ(t)</td>
+<td>growing-season modifier ∈ [0.5, 1.0] (annual cycle)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>η(t)</td>
+<td>output roll multiplier ~ Uniform(0.80, 1.20) (WTH d20 roll)</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<h3 id="industrial-output">Industrial output</h3>
+<blockquote>
+<p><strong>Q_I(t) = q_I · M_I(t) · η(t) · min(1, P_avail/P_req)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q_I</td>
+<td>credits produced</td>
+<td>cr/month</td>
+</tr>
+<tr>
+<td>q_I</td>
+<td>base credits per effective capital unit per month</td>
+<td>cr/capital-unit/month</td>
+</tr>
+</tbody>
+</table>
+<p>Industrial output is the colony's monetary economy. It funds capital purchases, imports, debt service, and government operations.</p>
+<h3 id="materials-output">Materials output</h3>
+<blockquote>
+<p><strong>Q_M(t) = q_M · M_M(t) · η(t) · min(1, P_avail/P_req)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q_M</td>
+<td>raw materials extracted</td>
+<td>tonnes/month</td>
+</tr>
+<tr>
+<td>q_M</td>
+<td>base tonnes per effective capital unit per month</td>
+<td>t/capital-unit/month</td>
+</tr>
+</tbody>
+</table>
+<p>Materials feed capital construction (internal) or export (external).</p>
+<h3 id="gdp-equivalent">GDP equivalent</h3>
+<blockquote>
+<p><strong>G(t) = 12 · [p_A · Q_A(t) + Q_I(t) + p_M · Q_M(t)]</strong></p>
+</blockquote>
+<p>Units: cr/year. p_A [cr/ration] and p_M [cr/tonne] are shadow prices converting physical outputs to a common credit value. G(t) serves as the colony's GDP analog, driving all Turchin equations that require G.</p>
+<hr />
+<h2 id="iii-satisfaction-indices-and-relative-wage">III — Satisfaction Indices and Relative Wage</h2>
+<h3 id="standard-of-nutrition">Standard of Nutrition</h3>
+<blockquote>
+<p><strong>S_N(t) = Q_A(t) / (N(t) · r_min)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r_min</td>
+<td>minimum adequate rations per person per month</td>
+<td>rations/person/month</td>
+</tr>
+</tbody>
+</table>
+<p>S_N = 1 → adequate. S_N &lt; 1 → shortfall (starvation risk). S_N &gt; 1 → surplus available for export.</p>
+<p>Nutrition stress modifier feeding population growth:</p>
+<blockquote>
+<p><strong>σ(S_N) = min(S_N, 1)^κ_N</strong> with κ_N &gt; 0</p>
+</blockquote>
+<p>When S_N ≥ 1, σ = 1 (no penalty). When S_N &lt; 1, growth rate suppressed and mortality rises.</p>
+<h3 id="standard-of-shelter">Standard of Shelter</h3>
+<blockquote>
+<p><strong>S_S(t) = H(t) / N(t)</strong></p>
+</blockquote>
+<p>where H(t) = housing capacity [berths], grows through construction capital deployment.</p>
+<p>S_S = 1 → every colonist housed. S_S &lt; 1 → overcrowding.</p>
+<h3 id="standard-of-living">Standard of Living</h3>
+<blockquote>
+<p><strong>S_L(t) = Q_I(t) / (N(t) · l_min)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>l_min</td>
+<td>minimum adequate credits per person per month (goods, services)</td>
+<td>cr/person/month</td>
+</tr>
+</tbody>
+</table>
+<h3 id="composite-relative-welfare-turchin-w-analog">Composite relative welfare (Turchin w-analog)</h3>
+<blockquote>
+<p><strong>w(t) = [S_N(t) + S_S(t) + S_L(t)] / 3</strong></p>
+</blockquote>
+<p>This maps WTH's three satisfaction indices to the dimensionless relative wage w used throughout Turchin's structural-demographic equations. When all three standards sit at adequacy, w = 1 = w₀ (the neutral mobility threshold).</p>
+<hr />
+<h2 id="iv-labor-market-and-wages">IV — Labor Market and Wages</h2>
+<h3 id="labor-demand-monthly-operational">Labor demand (monthly operational)</h3>
+<blockquote>
+<p><strong>D_lab(t) = G(t) / (2000 · 12 · P_prod(t))</strong></p>
+</blockquote>
+<p>Adapting Turchin's contemporary-US proxy (Eq. 14 source variable), where P_prod [cr/hour] is colony labor productivity (grows with Education Rating ER: P_prod = P_0 · (1 + ER/6)).</p>
+<p>Labor supply: S_lab(t) = λ · N(t)</p>
+<h3 id="wage-turchin-eq-9-10-adapted">Wage (Turchin Eq. 9 / 10 adapted)</h3>
+<blockquote>
+<p><strong>W(t+τ) = á · (G(t)/N(t))^α · (D_lab(t)/S_lab(t))^β · C(t)^γ</strong></p>
+<p><strong>w(t+τ) = W(t+τ) / (G(t)/N(t))</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>τ</td>
+<td>wage-stickiness lag (contract cycles)</td>
+<td>months</td>
+</tr>
+<tr>
+<td>á</td>
+<td>scale parameter</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>α</td>
+<td>GDP-per-capita elasticity</td>
+<td>dimensionless (≈ 1)</td>
+</tr>
+<tr>
+<td>β</td>
+<td>labor-market elasticity</td>
+<td>dimensionless (≈ 0.5)</td>
+</tr>
+<tr>
+<td>C(t)</td>
+<td>colonial authority coercive factor (charter rules, CR)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>γ</td>
+<td>coercion elasticity</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> In a colonial setting C(t) is non-trivial — the charter company can suppress wages through contract labor laws. C(t) is indexed to the colony's Control Rating (GURPS RM CR): higher CR → lower C → wage suppression.</p>
+<p>The w computed here should converge with the satisfaction-based w(t) from §III; in practice use the satisfaction index as the observable proxy and this equation as the predictive mechanism.</p>
+<hr />
+<h2 id="v-habitability-and-planetary-parameters-gurps-rm">V — Habitability and Planetary Parameters (GURPS RM)</h2>
+<h3 id="habitability-modifier">Habitability modifier</h3>
+<p>GURPS RM rates habitability 0 (Disastrous) to 19 (Excellent). Define:</p>
+<blockquote>
+<p><strong>h(Hab) = Hab / 10</strong> (normalized, 0 → 0, ≈ 10 → 1, 19 → 1.9)</p>
+</blockquote>
+<p>Habitability affects:
+- Population growth: via h(Hab) in §I
+- Agricultural carrying capacity: K_A = K₀ · h(Hab) (more habitable → more arable land)
+- Agricultural richness: R_A partially determined by Hab</p>
+<h3 id="education-rating-modifier-on-labor-productivity">Education Rating modifier on labor productivity</h3>
+<p>GURPS RM Education Rating ER ∈ [0, 6]:</p>
+<blockquote>
+<p><strong>P_prod(t) = P_0 · (1 + ER(t)/6)</strong></p>
+</blockquote>
+<p>ER grows slowly as the colony builds schools; it determines the productivity of each labor-unit and thus real labor demand.</p>
+<h3 id="control-rating-and-the-coercive-wage-factor">Control Rating and the coercive wage factor</h3>
+<table>
+<thead>
+<tr>
+<th>CR</th>
+<th>C(t)</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>1.3</td>
+<td>Free society; wages set by market</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.1</td>
+<td>Mild regulation</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.0</td>
+<td>Standard colonial charter</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.85</td>
+<td>Heavy state control</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.70</td>
+<td>Near-mandatory labor</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="vi-elite-dynamics-turchin-eqs-4-13">VI — Elite Dynamics (Turchin Eqs. 4 / 13)</h2>
+<h3 id="elite-population-ode">Elite population ODE</h3>
+<blockquote>
+<p><strong>Ė(t) = r_e · E(t) + μ₀ · (w₀ − w(t)) / w(t) · N(t)</strong></p>
+</blockquote>
+<p>Simplified (assuming r_e ≈ r₀ so e = E/N evolves independently of N):</p>
+<blockquote>
+<p><strong>ė(t) = μ₀ · (w₀ − w(t)) / w(t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r_e</td>
+<td>elite natural growth rate ≈ r₀</td>
+<td>mo⁻¹</td>
+</tr>
+<tr>
+<td>μ₀</td>
+<td>social mobility rate parameter</td>
+<td>mo⁻¹</td>
+</tr>
+<tr>
+<td>w₀</td>
+<td>mobility-neutral welfare threshold = 1</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p>When w &lt; 1 (depressed welfare), upward mobility accelerates → elite numbers swell. This is the core instability mechanism: poor colony conditions produce more people seeking elite positions than the administrative structure can absorb.</p>
+<p><strong>Colony-specific modification:</strong> elite positions are fixed by the administrative org-chart. Available slots S_pos(t) = s_max · N(t) where s_max is the colonial charter's maximum administrative ratio (e.g., 0.05 for 1 elite per 20 colonists).</p>
+<p>When E(t) &gt; S_pos(t): frustrated elites are politically dangerous (high EMP).</p>
+<h3 id="relative-elite-income-turchin-eq-5">Relative elite income (Turchin Eq. 5)</h3>
+<blockquote>
+<p><strong>ε(t) = (1 − w(t)λ) / e(t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>λ</td>
+<td>labor force participation ≈ 0.55</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p>When e(t) is large, total elite income is diluted across more recipients → each elite gets less → ε falls → ε⁻¹ rises → EMP rises. The squeeze feeds political restlessness even when the colony is nominally prosperous.</p>
+<hr />
+<h2 id="vii-political-stress-indicator-turchin-psi-adapted">VII — Political Stress Indicator (Turchin PSI adapted)</h2>
+<h3 id="mmp-mass-mobilization-potential">MMP — Mass Mobilization Potential</h3>
+<blockquote>
+<p><strong>MMP(t) = w(t)⁻¹ · f_set(t) · A_young(t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f_set(t) = N_set/N</td>
+<td>fraction of population in permanent settlements vs. dispersed field teams</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>A_young(t)</td>
+<td>fraction of colony population aged 20–29</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p><em>Rationale for f_set:</em> Turchin uses urbanization N_urb/N as the proxy for mobilization density. In a young colony the analog is how concentrated the population is in the central settlement; dispersed field teams are hard to organize for collective action.</p>
+<h3 id="emp-elite-mobilization-potential">EMP — Elite Mobilization Potential</h3>
+<blockquote>
+<p><strong>EMP(t) = ε(t)⁻¹ · (E(t) / S_pos(t))</strong></p>
+</blockquote>
+<p>When elites are overproduced relative to available positions (E &gt; S_pos), both terms amplify each other: income is diluted <em>and</em> there are more frustrated aspirants per slot.</p>
+<h3 id="sfd-state-fiscal-distress">SFD — State Fiscal Distress</h3>
+<blockquote>
+<p><strong>SFD(t) = (Y(t) / G(t)) · D(t)</strong></p>
+<p><strong>D(t) = 1 − CL(t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Y(t)</td>
+<td>cumulative debt owed to Earth (or charter company)</td>
+<td>cr</td>
+</tr>
+<tr>
+<td>G(t)</td>
+<td>annual GDP equivalent</td>
+<td>cr/year</td>
+</tr>
+<tr>
+<td>Y/G</td>
+<td>debt-to-annual-output ratio</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>D(t)</td>
+<td>public distrust = inverse of Citizen Loyalty</td>
+<td>dimensionless ∈ [0, 1]</td>
+</tr>
+</tbody>
+</table>
+<p>A colony that is both heavily indebted to Earth <em>and</em> has low loyalty to the colonial administration scores high on SFD regardless of its nominal economic size.</p>
+<h3 id="full-psi">Full PSI</h3>
+<blockquote>
+<p><strong>Ψ(t) = w(t)⁻¹ · f_set(t) · A_young(t) · ε(t)⁻¹ · (E(t)/S_pos(t)) · (Y(t)/G(t)) · D(t)</strong></p>
+</blockquote>
+<p>This is the direct colony analog of Turchin's Eq. 14, with:
+- w⁻¹ from composite satisfaction §III
+- f_set replacing N_urb/N
+- A_young from census data
+- ε⁻¹, E/S_pos from elite dynamics §VI
+- Y/G from fiscal equation §VIII
+- D(t) from Citizen Loyalty §IX</p>
+<hr />
+<h2 id="viii-fiscal-dynamics">VIII — Fiscal Dynamics</h2>
+<h3 id="revenue-gurps-rm">Revenue (GURPS RM)</h3>
+<blockquote>
+<p><strong>R_rev(t) = w_col(t) · N(t) · RF · 0.6</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w_col</td>
+<td>average monthly credit-income per colonist</td>
+<td>cr/person/month</td>
+</tr>
+<tr>
+<td>RF</td>
+<td>Revenue Factor (function of CR, from GURPS RM table)</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p>RF values: CR 2 → 0.05; CR 3 → 0.10; CR 4 → 0.20; CR 5 → 0.30; CR 6 → 0.40.</p>
+<p>w_col ≈ Q_I(t) / N(t) + shadow value of rations received (≈ p_A · r_adequate).</p>
+<h3 id="capital-maintenance-cost-wth">Capital maintenance cost (WTH)</h3>
+<blockquote>
+<p><strong>C_maint(t) = 0.00417 · [AC(t) · v_AC + IC(t) · v_IC + MC(t) · v_MC] · Θ(t − t_{deploy} − 120)</strong></p>
+</blockquote>
+<p>where v_x is the credit value per capital unit, 0.00417 ≈ 5%/year ÷ 12, and Θ is the Heaviside step function (maintenance only starts in month 120 = year 10 of colony operation, per WTH rules).</p>
+<h3 id="government-operating-expenditure">Government operating expenditure</h3>
+<blockquote>
+<p><strong>C_gov(t) = c_e · E(t) + c_admin · N(t)</strong></p>
+</blockquote>
+<p>Administrative costs scale with both elite headcount and total population (basic services).</p>
+<h3 id="debt-dynamics">Debt dynamics</h3>
+<blockquote>
+<p><strong>Ẏ(t) = [C_gov(t) + C_maint(t)] − R_rev(t) − T_rev(t) + I_Earth(t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T_rev(t)</td>
+<td>trade revenue received from Earth (lagged by Δ = 24 months round-trip)</td>
+<td>cr/month</td>
+</tr>
+<tr>
+<td>I_Earth(t)</td>
+<td>Earth subsidies/investment inflow</td>
+<td>cr/month</td>
+</tr>
+</tbody>
+</table>
+<p>I_Earth is policy-determined and subject to Earth-side political decisions that the colony cannot influence on timescales shorter than 12 months.</p>
+<hr />
+<h2 id="ix-off-world-trade-and-supply-chain-lag">IX — Off-world Trade and Supply-Chain Lag</h2>
+<h3 id="export-tonnage-wth-formula">Export tonnage (WTH formula)</h3>
+<blockquote>
+<p><strong>X(t) = Q_A_sur(t) / 100 + Q_M_sur(t) / 20</strong> [displacement-tonnes/month]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q_A_sur = max(0, Q_A − N·r_min)</td>
+<td>surplus rations above subsistence</td>
+<td>rations/month</td>
+</tr>
+<tr>
+<td>Q_M_sur</td>
+<td>materials surplus after internal construction use</td>
+<td>tonnes/month</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trade-revenue-with-transit-lag">Trade revenue with transit lag</h3>
+<blockquote>
+<p><strong>T_rev(t) = p_exp · X(t − 24)</strong></p>
+</blockquote>
+<p>The round-trip lag of 24 months (12 out, 12 back for payment) means the colony's current export decisions do not yield revenue until 2 years later. This lag couples the trade loop to fiscal dynamics in a way that can produce oscillations: a production surplus today builds debt for 2 years before the credits arrive.</p>
+<p><strong>Import constraint:</strong> the colony can only import what fits in the return voyage. Import capacity C_imp [displacement-tonnes/convoy] is a hard upper bound on capital imports per cycle.</p>
+<hr />
+<h2 id="x-citizen-loyalty-and-governance-dynamics-gurps-rm">X — Citizen Loyalty and Governance Dynamics (GURPS RM)</h2>
+<h3 id="political-track-update-wth-monthly-roll">Political Track update (WTH monthly roll)</h3>
+<p>At each monthly step, draw:</p>
+<blockquote>
+<p><strong>P_roll(t) ~ DiscreteUniform(1, 20) + PT(t) + MS_adj</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PT(t)</td>
+<td>current Political Track level ∈ {−3,…,+3}</td>
+</tr>
+<tr>
+<td>MS_adj</td>
+<td>administrator Management Skill modifier</td>
+</tr>
+</tbody>
+</table>
+<p>Outcome:
+- P_roll &gt; 15 → PT → PT + 1 (capped at +3)
+- P_roll &lt; 5 → PT → PT − 1 (floored at −3)
+- 5 ≤ P_roll ≤ 15 → no change</p>
+<h3 id="citizen-loyalty-dynamics">Citizen Loyalty dynamics</h3>
+<blockquote>
+<p><strong>CL(t+1) = clamp( CL(t) + α_PT · ΔPT(t) − α_Ψ · Ψ(t) · Δt + α_dis · ΔCL_dis(t), 0, 1 )</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>α_PT</td>
+<td>loyalty gain per Political Track improvement step</td>
+</tr>
+<tr>
+<td>α_Ψ</td>
+<td>loyalty erosion per unit PSI per month</td>
+</tr>
+<tr>
+<td>α_dis</td>
+<td>loyalty shock from disruptions (negative)</td>
+</tr>
+</tbody>
+</table>
+<p>Distrust feeds back into PSI through D(t) = 1 − CL(t), creating a self-reinforcing loop: high Ψ erodes loyalty → D rises → SFD rises → Ψ rises further. This is the colonial analog of Turchin's instability spiral.</p>
+<h3 id="gurps-rm-realm-value">GURPS RM Realm Value</h3>
+<blockquote>
+<p><strong>V(t) = w_col(t) · N(t) · 0.6</strong></p>
+</blockquote>
+<p>Realm Value is not a direct driver in the ODE system; it serves as a summary statistic representing the colony's strategic worth to Earth (which determines I_Earth and immigration willingness).</p>
+<hr />
+<h2 id="xi-disruptions-gurps-rm-stochastic-shocks">XI — Disruptions (GURPS RM / Stochastic Shocks)</h2>
+<h3 id="disruption-probability">Disruption probability</h3>
+<blockquote>
+<p><strong>p_dis(t) = p₀ · Ψ(t)^κ</strong></p>
+</blockquote>
+<p>High PSI periods are more disruption-prone. At each monthly step, if u ~ Uniform(0,1) &lt; p_dis(t), draw a disruption type from the GURPS RM disruption table.</p>
+<h3 id="disruption-effects-selected">Disruption effects (selected)</h3>
+<table>
+<thead>
+<tr>
+<th>Disruption</th>
+<th>Effect on state variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plague</td>
+<td>N → N · (1 − δ_plag); CL ↓ by δ_plag_CL</td>
+</tr>
+<tr>
+<td>Drought / Famine</td>
+<td>Q_A → Q_A · (1 − δ_fam) for τ_fam months; R_A temporarily ↓</td>
+</tr>
+<tr>
+<td>Corruption</td>
+<td>R_rev → R_rev · (1 − δ_cor); Y ↑ by diversion amount</td>
+</tr>
+<tr>
+<td>Political Schism</td>
+<td>Ψ spike (add δ_sch to Ψ for τ_sch months); PT − 2</td>
+</tr>
+<tr>
+<td>Trade Embargo</td>
+<td>T_rev = 0 for τ_emb months; I_Earth = 0 if supply convoy halted</td>
+</tr>
+<tr>
+<td>Troublesome Flora/Fauna</td>
+<td>K_A ↓ (carrying capacity reduced until extirpation campaign)</td>
+</tr>
+<tr>
+<td>Pollution</td>
+<td>h(Hab) temporarily ↓; N growth rate suppressed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-time-modifier-gurps-rm">Response-time modifier (GURPS RM)</h3>
+<p>Disruption effects decay at rate governed by the administrator's Management Skill MS and Technology Level TL:</p>
+<blockquote>
+<p><strong>τ_resp = τ₀ / (1 + MS/2)</strong></p>
+</blockquote>
+<p>A disruption shock X_dis decays as:</p>
+<blockquote>
+<p><strong>X_dis(t) = X_dis(0) · exp(−t / τ_resp)</strong></p>
+</blockquote>
+<p>Higher MS → shorter response time → disruptions clear faster.</p>
+<hr />
+<h2 id="xii-capital-investment-dynamics">XII — Capital Investment Dynamics</h2>
+<h3 id="capital-purchase-constraint">Capital purchase constraint</h3>
+<p>Capital is purchased with industrial credits and imported from Earth:</p>
+<blockquote>
+<p><strong>ΔC_x(t) = min(credits_available, import_capacity_allocation) / v_x</strong></p>
+</blockquote>
+<p>Capital units purchased at time t arrive Δ = 12 months later (one-way transit). Newly deployed capital begins operation in month t + 12 and begins incurring maintenance in month t + 12 + 120.</p>
+<h3 id="capital-depreciation">Capital depreciation</h3>
+<blockquote>
+<p><strong>Ċ_x(t) = −δ_cap · C_x(t)</strong> (ongoing wear beyond maintenance replacement)</p>
+</blockquote>
+<p>If maintenance is not funded (credits insufficient), depreciation accelerates.</p>
+<hr />
+<h2 id="xiii-complete-dependency-structure">XIII — Complete Dependency Structure</h2>
+<pre><code>Planetary survey ──► R_A, Hab, K_A
+GURPS RM Hab ──────► h(Hab) ──────────────────────────────► Ṅ
+                                                               │
+N(t) ──────────────────────────────────────────────────────► N_w, N_c, S_lab
+                                                               │
+AC, AL ──► M_A ──► Q_A ──► S_N ─────────────────────────────┐│
+IC, IL ──► M_I ──► Q_I ──► S_L, G, R_rev ──────────────────┐││
+MC, ML ──► M_M ──► Q_M ──► S_M, X ─────────────────────────┘││
+                                                              │││
+                               S_N, S_S, S_L ──► w(t) ───────┘│
+                                                               ││
+                          D_lab, S_lab ──► w (wage model) ─────┘│
+                                                                ││
+                              w(t) ──► ė ──► e(t), E(t) ───────┤
+                              w, e ──► ε(t) ────────────────────┤
+                                                                ││
+                              w⁻¹, f_set, A_young ──► MMP ──────┤
+                              ε⁻¹, E/S_pos ──────► EMP ──────────┤
+                              Y/G, D=1−CL ────────► SFD ──────────┤
+                                                                 ││
+                              MMP × EMP × SFD ──────────────────► Ψ
+                                                                 │
+                              Ψ ──► p_dis ──► disruptions ───────┤
+                              Ψ ──► CL erosion ──► D ────────────┤
+                                                                 │
+                              PT roll ──► PT ──► CL ──► D ───────┘
+
+                              Q_A_sur, Q_M_sur ──► X ──► T_rev(t+24)
+                              T_rev, R_rev, C_gov, C_maint ──► Ẏ
+                              Y, G ──► Y/G ──► SFD
+</code></pre>
+<p><strong>Primary feedback loops:</strong></p>
+<ol>
+<li><strong>Low-welfare spiral:</strong> w ↓ → ė ↑ → e ↑ → ε ↓ → ε⁻¹ ↑ → EMP ↑ → Ψ ↑ → CL ↓ → D ↑ → SFD ↑ → Ψ ↑↑</li>
+<li><strong>Fiscal trap:</strong> Y ↑ → Y/G ↑ → SFD ↑ → Ψ ↑ → disruptions more frequent → production ↓ → G ↓ → Y/G ↑↑</li>
+<li><strong>Elite saturation:</strong> w ↓ → mobility ↑ → E ↑ past S_pos → frustrated elites → EMP ↑ → Ψ ↑ → further welfare pressure</li>
+<li><strong>Trade-lag oscillator:</strong> surplus production t → export → T_rev arrives t+24 → credits finance capital → output rises t+36 → welfare improves; if conditions reversed in interval, lags can destabilize</li>
+<li><strong>Stabilizing loop:</strong> PT improvement → CL ↑ → D ↓ → SFD ↓ → Ψ ↓ (requires MS-adjusted favorable rolls)</li>
+</ol>
+<hr />
+<h2 id="xiv-measurable-outputs">XIV — Measurable Outputs</h2>
+<p>These are the observable quantities a colonial survey or Earth oversight body could directly measure at any time step.</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Formula</th>
+<th>Units</th>
+<th>What it signals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>N(t)</strong></td>
+<td>total population</td>
+<td>persons</td>
+<td>Colony size and growth trajectory</td>
+</tr>
+<tr>
+<td><strong>G(t)</strong></td>
+<td>p_A·Q_A + Q_I + p_M·Q_M × 12</td>
+<td>cr/year</td>
+<td>Economic output; fiscal baseline</td>
+</tr>
+<tr>
+<td><strong>Ψ(t)</strong></td>
+<td>MMP × EMP × SFD</td>
+<td>dimensionless</td>
+<td>Integrated instability risk (leading indicator)</td>
+</tr>
+<tr>
+<td><strong>S_N(t)</strong></td>
+<td>Q_A / (N·r_min)</td>
+<td>dimensionless</td>
+<td>Nutrition adequacy; famine risk</td>
+</tr>
+<tr>
+<td><strong>S_S(t)</strong></td>
+<td>H / N</td>
+<td>dimensionless</td>
+<td>Shelter adequacy; overcrowding</td>
+</tr>
+<tr>
+<td><strong>S_L(t)</strong></td>
+<td>Q_I / (N·l_min)</td>
+<td>dimensionless</td>
+<td>Living standards; consumer goods availability</td>
+</tr>
+<tr>
+<td><strong>w(t)</strong></td>
+<td>(S_N + S_S + S_L) / 3</td>
+<td>dimensionless</td>
+<td>Composite welfare; mobility threshold proximity</td>
+</tr>
+<tr>
+<td><strong>e(t)</strong></td>
+<td>E / N</td>
+<td>dimensionless</td>
+<td>Elite fraction; tracks overproduction</td>
+</tr>
+<tr>
+<td><strong>ε(t)</strong></td>
+<td>(1 − wλ) / e</td>
+<td>dimensionless</td>
+<td>Elite income dilution</td>
+</tr>
+<tr>
+<td><strong>CL(t)</strong></td>
+<td>citizen loyalty</td>
+<td>dimensionless</td>
+<td>Political stability</td>
+</tr>
+<tr>
+<td><strong>Y(t)/G(t)</strong></td>
+<td>cumulative debt / annual GDP</td>
+<td>years</td>
+<td>Fiscal sustainability</td>
+</tr>
+<tr>
+<td><strong>X(t)</strong></td>
+<td>Q_A_sur/100 + Q_M_sur/20</td>
+<td>displacement-tonnes/month</td>
+<td>Export capacity; trade viability</td>
+</tr>
+<tr>
+<td><strong>T_rev(t)</strong></td>
+<td>p_exp · X(t−24)</td>
+<td>cr/month</td>
+<td>Lagged trade revenue actually received</td>
+</tr>
+<tr>
+<td><strong>p_dis(t)</strong></td>
+<td>p₀ · Ψ^κ</td>
+<td>probability/month</td>
+<td>Disruption risk; useful for scenario planning</td>
+</tr>
+<tr>
+<td><strong>τ_resp</strong></td>
+<td>τ₀ / (1 + MS/2)</td>
+<td>months</td>
+<td>Governance response speed to shocks</td>
+</tr>
+<tr>
+<td><strong>V(t)</strong></td>
+<td>w_col · N · 0.6</td>
+<td>cr</td>
+<td>Realm value; Earth's strategic valuation of colony</td>
+</tr>
+</tbody>
+</table>
+<h3 id="threshold-values-of-note">Threshold values of note</h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Threshold</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adequate nutrition</td>
+<td>S_N ≥ 1</td>
+<td>No starvation pressure on growth or loyalty</td>
+</tr>
+<tr>
+<td>Elite saturation</td>
+<td>e(t) &gt; s_max</td>
+<td>Every elite excess beyond this is "frustrated elite"</td>
+</tr>
+<tr>
+<td>Welfare neutral</td>
+<td>w(t) = w₀ = 1</td>
+<td>Mobility halts; system near equilibrium</td>
+</tr>
+<tr>
+<td>Fiscal danger</td>
+<td>Y/G &gt; 3</td>
+<td>Debt exceeds 3 years of output; Earth likely to intervene</td>
+</tr>
+<tr>
+<td>High PSI</td>
+<td>Ψ &gt; Ψ_crit</td>
+<td>Colony-specific; political crisis probable within ~5 years</td>
+</tr>
+<tr>
+<td>Loyalty collapse</td>
+<td>CL &lt; 0.25</td>
+<td>Risk of open revolt or secession movement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="xv-parameter-summary">XV — Parameter Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Baseline value</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r₀</td>
+<td>0.02 y⁻¹ (= 1/600 mo⁻¹)</td>
+<td>WTH</td>
+<td>Annual population growth</td>
+</tr>
+<tr>
+<td>λ</td>
+<td>0.55</td>
+<td>assumption</td>
+<td>Working-age fraction</td>
+</tr>
+<tr>
+<td>s_max</td>
+<td>0.05</td>
+<td>GURPS RM</td>
+<td>Max elite fraction under standard charter</td>
+</tr>
+<tr>
+<td>μ₀</td>
+<td>0.005 mo⁻¹</td>
+<td>Turchin calibrated, rescaled</td>
+<td>Mobility parameter</td>
+</tr>
+<tr>
+<td>w₀</td>
+<td>1.0</td>
+<td>Turchin</td>
+<td>Neutral welfare threshold</td>
+</tr>
+<tr>
+<td>β</td>
+<td>0.5</td>
+<td>Turchin Eq. 9</td>
+<td>Wage labor-market elasticity</td>
+</tr>
+<tr>
+<td>τ</td>
+<td>3–5 mo</td>
+<td>Turchin</td>
+<td>Wage-stickiness lag</td>
+</tr>
+<tr>
+<td>Δ</td>
+<td>12 mo</td>
+<td>setting</td>
+<td>One-way Earth transit time</td>
+</tr>
+<tr>
+<td>κ_N</td>
+<td>2</td>
+<td>assumption</td>
+<td>Nutrition stress nonlinearity</td>
+</tr>
+<tr>
+<td>p₀</td>
+<td>0.02 / mo</td>
+<td>GURPS RM</td>
+<td>Base disruption probability at Ψ = 1</td>
+</tr>
+<tr>
+<td>κ</td>
+<td>1.5</td>
+<td>assumption</td>
+<td>PSI-disruption sensitivity exponent</td>
+</tr>
+<tr>
+<td>τ₀</td>
+<td>6 mo</td>
+<td>GURPS RM RTM</td>
+<td>Base response time at MS 0</td>
+</tr>
+<tr>
+<td>φ_min</td>
+<td>0.5</td>
+<td>WTH</td>
+<td>Minimum growing-season modifier</td>
+</tr>
+<tr>
+<td>maintenance rate</td>
+<td>0.00417 / mo</td>
+<td>WTH</td>
+<td>5% capital value per year, starting month 120</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul>
+<li><strong>WTH</strong> = TNE 0311, <em>World Tamer's Handbook</em>, ch. 4 (Colonial Economics), ch. 5 (Monthly Turn)</li>
+<li><strong>GURPS RM</strong> = <em>GURPS Realm Management</em>, ch. 1–2 (Realm Value, Revenue, Disruptions, RTM, Habitability, Education Rating)</li>
+<li><strong>3turchin</strong> = Turchin 2013, "Modeling Social Pressures Toward Political Instability", <em>Cliodynamics</em> 4.2: 241–280; Eqs. 1–14 fully inventoried in <code>turchin-equations.md</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

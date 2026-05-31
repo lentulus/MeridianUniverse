@@ -1,0 +1,1927 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lentulus.github.io/MeridianUniverse/Models/turchin-equations/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Turchin Equation Inventory - Meridian Universe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#turchin-equation-inventory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Meridian Universe" class="md-header__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Meridian Universe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Turchin Equation Inventory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Meridian Universe" class="md-nav__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    Meridian Universe
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FutureHistory/Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Developed Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/meridian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meridian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worlds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worlds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/colonymodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColonyModels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worldmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorldMaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3turchin-equations-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Behind the Colony Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-i-political-stress-indicator-psi-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section I — Political Stress Indicator (PSI) Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section I — Political Stress Indicator (PSI) Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mass-mobilization-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mass Mobilization Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elite-mobilization-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elite Mobilization Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-fiscal-distress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Fiscal Distress
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-ii-general-wage-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section II — General Wage Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section II — General Wage Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eq-1-real-wage-multiplicative-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 1 — Real wage (multiplicative form)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-2-log-linearized-wage-regression-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 2 — Log-linearized wage (regression form)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-iii-elite-dynamics-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section III — Elite Dynamics (General)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section III — Elite Dynamics (General)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eq-3-elite-population-ode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 3 — Elite population ODE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-mobility-coefficient-unnumbered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Social mobility coefficient (unnumbered)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-4-combined-elite-ode-substituting-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 4 — Combined elite ODE (substituting mobility)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-5-relative-elite-income" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 5 — Relative elite income
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-iv-antebellum-demographic-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section IV — Antebellum Demographic Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section IV — Antebellum Demographic Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rural-base-growth-unnumbered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rural base growth (unnumbered)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-rate-unnumbered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration rate (unnumbered)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-6-rural-population-with-emigration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 6 — Rural population with emigration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-7-urban-population-with-immigration-inflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 7 — Urban population with immigration inflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-8-labor-demand-ode-antebellum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 8 — Labor demand ODE (Antebellum)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-9-wage-antebellum-pure-capitalist-simplified-eq-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 9 — Wage (Antebellum, pure capitalist; simplified Eq. 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-10-relative-wage-antebellum-key-dynamic-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 10 — Relative wage (Antebellum key dynamic variable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-11-antebellum-elite-ode-specific-instance-of-eqs-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 11 — Antebellum elite ODE (specific instance of Eqs. 3–4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-12-antebellum-relative-elite-income" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 12 — Antebellum relative elite income
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-v-contemporary-us-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section V — Contemporary US Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section V — Contemporary US Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#labor-demand-proxy-unnumbered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labor demand proxy (unnumbered)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-13-contemporary-elite-dynamics-simplified-eq-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 13 — Contemporary elite dynamics (= simplified Eq. 4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eq-14-full-psi-expanded-contemporary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eq. 14 — Full PSI expanded (Contemporary)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equation-dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equation Dependency Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibrated-parameter-values-antebellum-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibrated Parameter Values (Antebellum model)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-turchin-2013-2013-vs-turchin-2011-2011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Turchin 2013 (2013) vs. Turchin 2011 (2011)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="turchin-equation-inventory">Turchin Equation Inventory</h1>
+<p>This is an AI produced summary and part of the reference material for ColonyModel</p>
+<p>Sources:
+- "Modeling Social Pressures Toward Political Instability", Turchin 2013, <em>Cliodynamics</em> 4.2: 241–280
+ - "Toward Cliodynamics – an Analytical, Predictive Science of History", Turchin 2011, <em>Cliodynamics</em> 2: 167–186</p>
+<hr />
+<h2 id="section-i-political-stress-indicator-psi-framework">Section I — Political Stress Indicator (PSI) Framework</h2>
+<p><em>(Turchin 2013 pp. 246–247; all components dimensionless; Ψ is a relative index)</em></p>
+<h3 id="top-level-composite">Top-level composite</h3>
+<blockquote>
+<p><strong>Ψ = MMP × EMP × SFD</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ψ</td>
+<td>Political Stress Indicator</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>MMP</td>
+<td>Mass Mobilization Potential</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>EMP</td>
+<td>Elite Mobilization Potential</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>SFD</td>
+<td>State Fiscal Distress</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="mass-mobilization-potential">Mass Mobilization Potential</h3>
+<blockquote>
+<p><strong>MMP = w⁻¹ · (N_urb / N) · A₂₀₋₂₉</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w = W/g</td>
+<td>relative wage (real wage / GDP per capita)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>w⁻¹</td>
+<td>"misery index" — inverse relative wage</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>N_urb</td>
+<td>urban population</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>N</td>
+<td>total population</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>N_urb/N</td>
+<td>urbanization rate</td>
+<td>dimensionless (fraction)</td>
+</tr>
+<tr>
+<td>A₂₀₋₂₉</td>
+<td>proportion of population aged 20–29</td>
+<td>dimensionless (fraction)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="elite-mobilization-potential">Elite Mobilization Potential</h3>
+<blockquote>
+<p><strong>EMP = ε⁻¹ · (E / sN)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ε</td>
+<td>relative elite income (avg elite income / GDP per capita)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>ε⁻¹</td>
+<td>inverse relative elite income</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>E</td>
+<td>total number of elites</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>s</td>
+<td>government employees per total population</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>sN</td>
+<td>number of government positions</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>E/sN</td>
+<td>elite overproduction ratio (elites per available position)</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p>When s is constant, EMP simplifies to ε⁻¹e where e = E/N (relative elite numbers).</p>
+<hr />
+<h3 id="state-fiscal-distress">State Fiscal Distress</h3>
+<blockquote>
+<p><strong>SFD = (Y / G) · D</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Y</td>
+<td>total national debt</td>
+<td>currency (dollars)</td>
+</tr>
+<tr>
+<td>G</td>
+<td>GDP</td>
+<td>currency/year</td>
+</tr>
+<tr>
+<td>Y/G</td>
+<td>debt-to-GDP ratio</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>D</td>
+<td>public distrust in state institutions</td>
+<td>dimensionless (fraction 0–1)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-ii-general-wage-model">Section II — General Wage Model</h2>
+<p><em>(Turchin 2013 pp. 248–249)</em></p>
+<h3 id="eq-1-real-wage-multiplicative-form">Eq. 1 — Real wage (multiplicative form)</h3>
+<blockquote>
+<p><strong>W_{t+τ} = a · (G_t/N_t)^α · (D_t/S_t)^β · C_t^γ</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W</td>
+<td>real wage (inflation-adjusted)</td>
+<td>currency/time</td>
+</tr>
+<tr>
+<td>t</td>
+<td>time</td>
+<td>years</td>
+</tr>
+<tr>
+<td>τ</td>
+<td>wage stickiness lag</td>
+<td>years (≥3, empirically ~5)</td>
+</tr>
+<tr>
+<td>a</td>
+<td>scale parameter</td>
+<td>absorbs unit conversion</td>
+</tr>
+<tr>
+<td>G</td>
+<td>GDP</td>
+<td>currency/year</td>
+</tr>
+<tr>
+<td>N</td>
+<td>total population</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>G/N</td>
+<td>GDP per capita</td>
+<td>currency per person per year</td>
+</tr>
+<tr>
+<td>D</td>
+<td>demand for labor</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>S</td>
+<td>supply of labor</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>D/S</td>
+<td>demand/supply ratio</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>C</td>
+<td>cultural/coercive non-market forces</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>α, β, γ</td>
+<td>elasticity exponents</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="eq-2-log-linearized-wage-regression-form">Eq. 2 — Log-linearized wage (regression form)</h3>
+<blockquote>
+<p><strong>log W_{t+τ} = A + α log(G_t/N_t) + β log(D_t/S_t) + γ log C_t + ε_t</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>log a (intercept)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>ε_t</td>
+<td>residual error (may be autocorrelated)</td>
+<td>log-currency</td>
+</tr>
+</tbody>
+</table>
+<p>Eq. 2 is Eq. 1 log-transformed; the three drivers combine linearly and additively in log-space, enabling OLS regression.</p>
+<hr />
+<h2 id="section-iii-elite-dynamics-general">Section III — Elite Dynamics (General)</h2>
+<p><em>(Turchin 2013 pp. 250–251)</em></p>
+<h3 id="eq-3-elite-population-ode">Eq. 3 — Elite population ODE</h3>
+<blockquote>
+<p><strong>Ė = rE + μN</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ė = dE/dt</td>
+<td>rate of change of elite numbers</td>
+<td>persons/year</td>
+</tr>
+<tr>
+<td>r</td>
+<td>per capita elite demographic growth rate</td>
+<td>year⁻¹</td>
+</tr>
+<tr>
+<td>E</td>
+<td>number of elites</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>μ</td>
+<td>net social mobility coefficient (upward minus downward)</td>
+<td>year⁻¹</td>
+</tr>
+<tr>
+<td>N</td>
+<td>general population</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>μN</td>
+<td>net flow into elite class via mobility</td>
+<td>persons/year</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="social-mobility-coefficient-unnumbered">Social mobility coefficient (unnumbered)</h3>
+<blockquote>
+<p><strong>μ = μ₀ · (w₀/w − 1)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>μ₀</td>
+<td>mobility magnitude parameter</td>
+<td>year⁻¹</td>
+</tr>
+<tr>
+<td>w₀</td>
+<td>threshold relative wage; mobility = 0 when w = w₀</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>w</td>
+<td>current relative wage</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p>When w &lt; w₀ (wages depressed), μ &gt; 0 → net upward mobility. When w &gt; w₀, μ &lt; 0 → net downward mobility.</p>
+<hr />
+<h3 id="eq-4-combined-elite-ode-substituting-mobility">Eq. 4 — Combined elite ODE (substituting mobility)</h3>
+<blockquote>
+<p><strong>Ė = rE + μ₀ · ((w₀ − w)/w) · N</strong></p>
+</blockquote>
+<p>Feeds from: <strong>w</strong> (wage model), <strong>N</strong> (population model).</p>
+<p>Simplified relative form assuming elite r = commoner r, so e = E/N:</p>
+<blockquote>
+<p><strong>ė = μ₀ · (w₀ − w) / w</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ė = de/dt</td>
+<td>rate of change of relative elite fraction</td>
+<td>year⁻¹</td>
+</tr>
+<tr>
+<td>e = E/N</td>
+<td>relative elite numbers</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="eq-5-relative-elite-income">Eq. 5 — Relative elite income</h3>
+<blockquote>
+<p><strong>ε = (1/g) · (G − WL)/E = (1 − wλ) / e</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ε</td>
+<td>relative elite income</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>g = G/N</td>
+<td>GDP per capita</td>
+<td>currency/person/year</td>
+</tr>
+<tr>
+<td>G</td>
+<td>GDP</td>
+<td>currency/year</td>
+</tr>
+<tr>
+<td>W</td>
+<td>real wage</td>
+<td>currency/year</td>
+</tr>
+<tr>
+<td>L</td>
+<td>labor force size</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>λ = L/N</td>
+<td>labor force participation rate</td>
+<td>dimensionless (≈ 0.5)</td>
+</tr>
+<tr>
+<td>e = E/N</td>
+<td>relative elite numbers</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>wλ</td>
+<td>wage bill as fraction of GDP per capita</td>
+<td>dimensionless</td>
+</tr>
+</tbody>
+</table>
+<p>Feeds from: w (wages), e (elite numbers), λ (treated as ~constant ≈ 0.5). Output ε feeds back into EMP.</p>
+<hr />
+<h2 id="section-iv-antebellum-demographic-model">Section IV — Antebellum Demographic Model</h2>
+<p><em>(Turchin 2013 pp. 252–254)</em></p>
+<h3 id="rural-base-growth-unnumbered">Rural base growth (unnumbered)</h3>
+<blockquote>
+<p><strong>Ṅ_rur = r_rur · N_rur</strong></p>
+</blockquote>
+<h3 id="migration-rate-unnumbered">Migration rate (unnumbered)</h3>
+<blockquote>
+<p><strong>M = r_rur · (N_rur/K)^θ</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M</td>
+<td>per capita migration rate from rural to urban</td>
+<td>year⁻¹</td>
+</tr>
+<tr>
+<td>r_rur</td>
+<td>rural per capita growth rate</td>
+<td>year⁻¹ (set to 0.025 y⁻¹)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>carrying capacity of rural land</td>
+<td>persons (set to 3.5 million)</td>
+</tr>
+<tr>
+<td>θ</td>
+<td>nonlinearity exponent for emigration</td>
+<td>dimensionless (set to 5)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="eq-6-rural-population-with-emigration">Eq. 6 — Rural population with emigration</h3>
+<blockquote>
+<p><strong>Ṅ_rur = r_rur · N_rur − r_rur · N_rur · (N_rur/K)^θ</strong></p>
+</blockquote>
+<p>When N_rur ≪ K emigration ≈ 0; when N_rur → K all surplus emigrates. A generalized logistic with steeper density-dependence than the standard (θ = 1) form.</p>
+<hr />
+<h3 id="eq-7-urban-population-with-immigration-inflow">Eq. 7 — Urban population with immigration inflow</h3>
+<blockquote>
+<p><strong>Ṅ_urb = r_urb · N_urb + r_rur · N_rur · (N_rur/K)^θ</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r_urb</td>
+<td>per capita urban growth rate</td>
+<td>year⁻¹ (set to 0.015 y⁻¹)</td>
+</tr>
+<tr>
+<td>N_urb</td>
+<td>urban population</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>Second term</td>
+<td>immigration from rural (= emigration from Eq. 6)</td>
+<td>persons/year</td>
+</tr>
+</tbody>
+</table>
+<p>The second term is the emigration term from Eq. 6. N_urb then feeds into Eq. 10 (wages) and MMP.</p>
+<hr />
+<h3 id="eq-8-labor-demand-ode-antebellum">Eq. 8 — Labor demand ODE (Antebellum)</h3>
+<blockquote>
+<p><strong>Ḋ = ρ · D</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ḋ = dD/dt</td>
+<td>rate of change of labor demand</td>
+<td>persons/year</td>
+</tr>
+<tr>
+<td>ρ</td>
+<td>growth rate of labor demand</td>
+<td>year⁻¹ (set to 0.03 y⁻¹)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>demand for labor</td>
+<td>persons</td>
+</tr>
+</tbody>
+</table>
+<p>D grows exponentially. Supply S = λN_urb grows with urban population; their ratio drives wages via Eq. 10.</p>
+<hr />
+<h3 id="eq-9-wage-antebellum-pure-capitalist-simplified-eq-1">Eq. 9 — Wage (Antebellum, pure capitalist; simplified Eq. 1)</h3>
+<blockquote>
+<p><strong>W = ag · (D/S)^β</strong></p>
+</blockquote>
+<p>Drops cultural factor C (nineteenth-century US approximated as pure market); sets α = 1.</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S = λN_urb</td>
+<td>urban labor supply</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>β</td>
+<td>demand/supply elasticity</td>
+<td>dimensionless (set to 0.5)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="eq-10-relative-wage-antebellum-key-dynamic-variable">Eq. 10 — Relative wage (Antebellum key dynamic variable)</h3>
+<blockquote>
+<p><strong>w = á · (D / λN_urb)^β</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w</td>
+<td>relative wage = W/g</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>á</td>
+<td>scale parameter</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>λ</td>
+<td>labor force participation</td>
+<td>dimensionless (≈ 0.5)</td>
+</tr>
+</tbody>
+</table>
+<p>Connects Eq. 7 (N_urb) and Eq. 8 (D) to the wage w, which drives Eqs. 11–12.</p>
+<hr />
+<h3 id="eq-11-antebellum-elite-ode-specific-instance-of-eqs-34">Eq. 11 — Antebellum elite ODE (specific instance of Eqs. 3–4)</h3>
+<blockquote>
+<p><strong>Ė = r_e · E + μ₀ · (w₀/w − 1) · N_urb</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r_e</td>
+<td>elite natural growth rate (set = r_rur)</td>
+<td>year⁻¹</td>
+</tr>
+<tr>
+<td>μ₀</td>
+<td>mobility parameter</td>
+<td>year⁻¹ (set to 0.002 y⁻¹)</td>
+</tr>
+<tr>
+<td>w₀</td>
+<td>mobility threshold</td>
+<td>dimensionless (set to 1)</td>
+</tr>
+<tr>
+<td>N_urb</td>
+<td>urban population (mobility source in 19th-c. US)</td>
+<td>persons</td>
+</tr>
+</tbody>
+</table>
+<p>Differs from Eq. 4 in that N_urb replaces N — in Antebellum US upward mobility came primarily from urban artisans, not the full population.</p>
+<hr />
+<h3 id="eq-12-antebellum-relative-elite-income">Eq. 12 — Antebellum relative elite income</h3>
+<blockquote>
+<p><strong>ε = (1 − wλ) / e</strong></p>
+</blockquote>
+<p>Same formula as Eq. 5, renumbered for the Antebellum application section.</p>
+<hr />
+<h2 id="section-v-contemporary-us-model">Section V — Contemporary US Model</h2>
+<p><em>(Turchin 2013 pp. 260–274)</em></p>
+<h3 id="labor-demand-proxy-unnumbered">Labor demand proxy (unnumbered)</h3>
+<blockquote>
+<p><strong>D_t = G_t / (2000 P_t)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G_t</td>
+<td>GDP</td>
+<td>dollars/year</td>
+</tr>
+<tr>
+<td>P_t</td>
+<td>labor productivity</td>
+<td>dollars/hour</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>hours per work-year (40 hr/wk × 50 wk)</td>
+<td>hours/year per worker</td>
+</tr>
+<tr>
+<td>D_t</td>
+<td>number of workers demanded</td>
+<td>persons</td>
+</tr>
+</tbody>
+</table>
+<p>Operationalizes the abstract D in Eq. 1 for twentieth-century regression.</p>
+<hr />
+<h3 id="eq-13-contemporary-elite-dynamics-simplified-eq-4">Eq. 13 — Contemporary elite dynamics (= simplified Eq. 4)</h3>
+<blockquote>
+<p><strong>ė = μ₀ · (w₀ − w) / w</strong></p>
+</blockquote>
+<p>Parameters: μ₀ = 0.1 y⁻¹, w₀ = 1. Same equation as the Eq. 4 simplified form, recalibrated for twentieth-century US.</p>
+<hr />
+<h3 id="eq-14-full-psi-expanded-contemporary">Eq. 14 — Full PSI expanded (Contemporary)</h3>
+<blockquote>
+<p><strong>Ψ = w⁻¹ · (N_urb/N) · A₂₀₋₂₉ · ε⁻¹ · e · (Y/G) · D</strong></p>
+</blockquote>
+<p>MMP × EMP × SFD written out in full with EMP simplified (s absorbed as constant):</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Source equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w⁻¹</td>
+<td>Eqs. 10, 13 — wage dynamics</td>
+</tr>
+<tr>
+<td>N_urb/N</td>
+<td>Eq. 7 — urban population</td>
+</tr>
+<tr>
+<td>A₂₀₋₂₉</td>
+<td>empirical census data (youth bulge)</td>
+</tr>
+<tr>
+<td>ε⁻¹</td>
+<td>Eqs. 5/12 — elite income</td>
+</tr>
+<tr>
+<td>e</td>
+<td>Eq. 13 — elite numbers</td>
+</tr>
+<tr>
+<td>Y/G</td>
+<td>US Treasury debt / GDP data</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Pew distrust survey data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="equation-dependency-graph">Equation Dependency Graph</h2>
+<pre><code>Eq. 6 (rural pop) ──────────────────────────────► N_rur(t)
+     │ emigration term
+     ▼
+Eq. 7 (urban pop) ──────────────────────────────► N_urb(t)
+     │                                                │
+Eq. 8 (labor demand) ──► D(t)                        │
+     │                    │                           │
+     └────────────────────┴───► Eq. 10 ──► w(t) ─────┤
+                                (relative              │
+                                 wage)                 │
+                                   │                   │
+                                   ▼                   ▼
+                              Eq. 4/11 ──────────► E(t), e(t)
+                              (elite ODE)              │
+                                                       │
+                              w, e, λ ──────────► Eq. 5/12 ──► ε(t)
+                                                  (elite income)
+                                                       │
+     ┌─────────────────────────────────────────────────┘
+     │
+     w⁻¹, N_urb/N, A₂₀₋₂₉ ────────────────────► MMP
+     ε⁻¹, e ────────────────────────────────────► EMP
+     Y/G, D ────────────────────────────────────► SFD
+                                                   │
+     MMP × EMP × SFD ───────────────────────────► Ψ (PSI)
+</code></pre>
+<p>Key feedback loop: <strong>low w → rapid elite accumulation (Eq. 4) → high e → diluted ε (Eq. 5) → high ε⁻¹ → elevated EMP → elevated Ψ</strong>. The same low w simultaneously drives MMP up directly. Both PSI components therefore amplify together when wages fall.</p>
+<hr />
+<h2 id="calibrated-parameter-values-antebellum-model">Calibrated Parameter Values (Antebellum model)</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r_rur</td>
+<td>0.025 y⁻¹</td>
+<td>rural population growth rate</td>
+</tr>
+<tr>
+<td>r_urb</td>
+<td>0.015 y⁻¹</td>
+<td>urban population growth rate</td>
+</tr>
+<tr>
+<td>K</td>
+<td>3.5 million persons</td>
+<td>rural carrying capacity (4 NE states)</td>
+</tr>
+<tr>
+<td>θ</td>
+<td>5</td>
+<td>emigration nonlinearity exponent</td>
+</tr>
+<tr>
+<td>β</td>
+<td>0.5</td>
+<td>wage elasticity to D/S ratio</td>
+</tr>
+<tr>
+<td>a</td>
+<td>1</td>
+<td>scale (simplified)</td>
+</tr>
+<tr>
+<td>ρ</td>
+<td>0.03 y⁻¹</td>
+<td>labor demand growth rate</td>
+</tr>
+<tr>
+<td>γ</td>
+<td>0.01 y⁻¹</td>
+<td>GDP per capita growth rate</td>
+</tr>
+<tr>
+<td>μ₀</td>
+<td>0.002 y⁻¹</td>
+<td>elite mobility magnitude</td>
+</tr>
+<tr>
+<td>w₀</td>
+<td>1</td>
+<td>wage threshold for zero mobility</td>
+</tr>
+<tr>
+<td>N_rur(1790)</td>
+<td>0.3K</td>
+<td>initial rural population</td>
+</tr>
+<tr>
+<td>N_urb(1790)</td>
+<td>0.1 N_rur</td>
+<td>initial urban population</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="comparison-turchin-2013-2013-vs-turchin-2011-2011">Comparison: Turchin 2013 (2013) vs. Turchin 2011 (2011)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Turchin 2011 (2011)</th>
+<th>Turchin 2013 (2013)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>Conceptual/argumentative</td>
+<td>Formal mathematical model</td>
+</tr>
+<tr>
+<td>Equations</td>
+<td>Zero explicit equations</td>
+<td>14 numbered + ~10 unnumbered</td>
+</tr>
+<tr>
+<td>Variable definitions</td>
+<td>None — verbal descriptions only</td>
+<td>Explicit, with units and calibrated parameter values</td>
+</tr>
+<tr>
+<td>PSI / Ψ</td>
+<td>Not mentioned</td>
+<td>Central construct; fully derived</td>
+</tr>
+<tr>
+<td>Population dynamics</td>
+<td>Secular cycles described qualitatively; cites Turchin &amp; Korotayev [35] eq. 8 (not reproduced)</td>
+<td>Eqs. 6–7: explicit rural/urban ODEs with nonlinear emigration</td>
+</tr>
+<tr>
+<td>Wages</td>
+<td>Not modeled</td>
+<td>Eqs. 1/2, 9/10: three-factor multiplicative model (GDP per capita, D/S, culture)</td>
+</tr>
+<tr>
+<td>Elite dynamics</td>
+<td>"Elite overproduction" named (following Goldstone)</td>
+<td>Eqs. 3/4/11/13: explicit ODE; ε (Eq. 5) tracks income dilution</td>
+</tr>
+<tr>
+<td>Empirical grounding</td>
+<td>Tables 1–2 (instability counts across 7 cycles + China); conversion curves</td>
+<td>Regression Table 1 (R² = 0.98); parameterized to specific US data; Figures 2–14</td>
+</tr>
+<tr>
+<td>Case studies</td>
+<td>Statistical comparison across secular cycles</td>
+<td>Two calibrated models: Antebellum US (1790–1880) and contemporary US (1927–2012)</td>
+</tr>
+<tr>
+<td>Key contribution</td>
+<td>Epistemological: a science of history is possible</td>
+<td>Mechanistic: quantifies why instability builds; PSI as leading indicator</td>
+</tr>
+<tr>
+<td>State variable</td>
+<td>Mentioned (legitimacy, fiscal crisis)</td>
+<td>Explicit SFD component in Ψ</td>
+</tr>
+</tbody>
+</table>
+<p>Turchin 2011  makes the <em>case</em> for mathematical cliodynamics by surveying empirical regularities and citing models from other papers. Turchin 2013 is the <em>execution</em>: the structural-demographic framework translated into a system of coupled differential equations, calibrated, and tested against data. The population-instability oscillation figure in Turchin 2011 (Fig. 1, from Turchin &amp; Korotayev ) is precisely the kind of output that the Turchin 2013 equation system generates in a more empirically tractable "dynamically incomplete" form.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

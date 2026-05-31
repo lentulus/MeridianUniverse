@@ -1,0 +1,2916 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lentulus.github.io/MeridianUniverse/Models/3turchin-equations-summary/">
+      
+      
+        <link rel="prev" href="../../Projects/worldmaps/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Math Behind the Colony Models - Meridian Universe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#turchin-2013-equation-inventory-and-variable-cross-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Meridian Universe" class="md-header__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Meridian Universe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Math Behind the Colony Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Meridian Universe" class="md-nav__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    Meridian Universe
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FutureHistory/Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Developed Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/meridian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meridian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worlds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worlds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/colonymodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColonyModels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worldmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorldMaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Behind the Colony Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Behind the Colony Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#political-stress-indicator-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Political Stress Indicator Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Social Mobility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-elite-income-full-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative Elite Income — Full Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-elite-numbers-simplified-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative Elite Numbers — Simplified Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wage-pure-capitalist-simplification-no-cultural-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wage — Pure-Capitalist Simplification (no cultural factor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wage-command-economy-simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wage — Command-Economy Simplification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rural-population-simple-exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rural Population — Simple Exponential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labor-demand-proxy-contemporary-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labor Demand Proxy (Contemporary Model)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbered-equations-papers-own-numbering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbered Equations (Paper's Own Numbering)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable Reference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-using-the-wage-equation-in-a-colony-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application: Using the Wage Equation in a Colony Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application: Using the Wage Equation in a Colony Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-with-variables-1419" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem with variables 14–19
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-14-elasticity-of-wages-to-gdp-per-capita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 14 — α (elasticity of wages to GDP per capita)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-15-elasticity-of-wages-to-the-demandsupply-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 15 — β (elasticity of wages to the demand/supply ratio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-16-elasticity-of-wages-to-culturalcoercive-factor-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 16 — γ (elasticity of wages to cultural/coercive factor C)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-17-a-a-scale-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 17 — a, â (scale parameter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-18-a-loga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 18 — A = log(a)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-19-wage-stickiness-lag-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 19 — τ (wage stickiness lag, years)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-starting-configuration-for-a-colony-wage-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical starting configuration for a colony wage model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-values-non-regression-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Values: Non-Regression Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Values: Non-Regression Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#population-and-demography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population and Demography
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Population and Demography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n_rur0-and-n_urb0-initial-rural-and-urban-populations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N_rur(0) and N_urb(0) — Initial rural and urban populations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r_rur-rural-per-capita-growth-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_rur — Rural per capita growth rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r_urb-urban-endogenous-growth-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_urb — Urban endogenous growth rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-rural-carrying-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K — Rural carrying capacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emigration-nonlinearity-exponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        θ — Emigration nonlinearity exponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labour-market-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labour Market Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Labour Market Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#growth-rate-of-labour-demand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ρ — Growth rate of labour demand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labour-force-participation-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        λ — Labour force participation rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elite-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elite Formation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elite Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-mobility-magnitude-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        μ₀ — Mobility magnitude parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w0-mobility-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        w₀ — Mobility threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e0-initial-relative-elite-fraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e(0) — Initial relative elite fraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s-government-positions-per-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        s — Government positions per population
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y0-initial-national-debt-and-d_trust0-initial-public-distrust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Y(0) — Initial national debt and D_trust(0) — Initial public distrust
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-model-produces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the model produces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-variable-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpreting Ψ (variable 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crisis-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crisis indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-model-piecewise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the model piecewise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demographic-structure-what-the-model-does-and-does-not-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demographic structure: what the model does and does not capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has-anyone-integrated-a-cohort-model-literature-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Has anyone integrated a cohort model? Literature note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-cohort-pipeline-as-a-side-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A cohort pipeline as a side module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explanations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#economic-elasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Economic Elasticity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#political-stress-indicator-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Political Stress Indicator Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Social Mobility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-elite-income-full-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative Elite Income — Full Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-elite-numbers-simplified-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relative Elite Numbers — Simplified Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wage-pure-capitalist-simplification-no-cultural-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wage — Pure-Capitalist Simplification (no cultural factor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wage-command-economy-simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wage — Command-Economy Simplification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rural-population-simple-exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rural Population — Simple Exponential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labor-demand-proxy-contemporary-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labor Demand Proxy (Contemporary Model)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbered-equations-papers-own-numbering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbered Equations (Paper's Own Numbering)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable Reference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-using-the-wage-equation-in-a-colony-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application: Using the Wage Equation in a Colony Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application: Using the Wage Equation in a Colony Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-with-variables-1419" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem with variables 14–19
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-14-elasticity-of-wages-to-gdp-per-capita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 14 — α (elasticity of wages to GDP per capita)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-15-elasticity-of-wages-to-the-demandsupply-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 15 — β (elasticity of wages to the demand/supply ratio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-16-elasticity-of-wages-to-culturalcoercive-factor-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 16 — γ (elasticity of wages to cultural/coercive factor C)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-17-a-a-scale-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 17 — a, â (scale parameter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-18-a-loga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 18 — A = log(a)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-19-wage-stickiness-lag-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable 19 — τ (wage stickiness lag, years)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-starting-configuration-for-a-colony-wage-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical starting configuration for a colony wage model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-values-non-regression-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Values: Non-Regression Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Values: Non-Regression Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#population-and-demography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population and Demography
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Population and Demography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n_rur0-and-n_urb0-initial-rural-and-urban-populations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N_rur(0) and N_urb(0) — Initial rural and urban populations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r_rur-rural-per-capita-growth-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_rur — Rural per capita growth rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r_urb-urban-endogenous-growth-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_urb — Urban endogenous growth rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-rural-carrying-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K — Rural carrying capacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emigration-nonlinearity-exponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        θ — Emigration nonlinearity exponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labour-market-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labour Market Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Labour Market Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#growth-rate-of-labour-demand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ρ — Growth rate of labour demand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labour-force-participation-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        λ — Labour force participation rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elite-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elite Formation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elite Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-mobility-magnitude-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        μ₀ — Mobility magnitude parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w0-mobility-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        w₀ — Mobility threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e0-initial-relative-elite-fraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e(0) — Initial relative elite fraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s-government-positions-per-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        s — Government positions per population
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y0-initial-national-debt-and-d_trust0-initial-public-distrust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Y(0) — Initial national debt and D_trust(0) — Initial public distrust
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-model-produces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the model produces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-variable-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpreting Ψ (variable 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crisis-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crisis indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-model-piecewise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the model piecewise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demographic-structure-what-the-model-does-and-does-not-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demographic structure: what the model does and does not capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has-anyone-integrated-a-cohort-model-literature-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Has anyone integrated a cohort model? Literature note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-cohort-pipeline-as-a-side-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A cohort pipeline as a side module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explanations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#economic-elasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Economic Elasticity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="turchin-2013-equation-inventory-and-variable-cross-reference">Turchin 2013 — Equation Inventory and Variable Cross-Reference</h1>
+<p><strong>Source:</strong> Turchin, Peter. 2013. "Modeling Social Pressures Toward Political Instability." <em>Cliodynamics</em> 4.2: 241–280.</p>
+<p><strong>Numbering:</strong> The paper numbers 14 equations; unnumbered display equations are assigned U1–U12 here in order of appearance.</p>
+<hr />
+<h2 id="equations">Equations</h2>
+<h3 id="political-stress-indicator-components">Political Stress Indicator Components</h3>
+<p><strong>U1</strong> &emsp; <span class="arithmatex">\(\Psi = \text{MMP} \times \text{EMP} \times \text{SFD}\)</span></p>
+<p><strong>U2</strong> &emsp; <span class="arithmatex">\(\text{MMP} = w^{-1} \dfrac{N_\text{urb}}{N} A_{20\text{–}29}\)</span></p>
+<p><strong>U3</strong> &emsp; <span class="arithmatex">\(\text{EMP} = \varepsilon^{-1} \dfrac{E}{sN}\)</span></p>
+<p><strong>U4</strong> &emsp; <span class="arithmatex">\(\text{SFD} = \dfrac{Y}{G} \cdot D_\text{trust}\)</span></p>
+<blockquote>
+<p>Note: D is used for two distinct variables — labor demand in the wage equations, and public distrust in U4/Eq. 14. Distinguished here as D and D_trust.</p>
+</blockquote>
+<hr />
+<h3 id="social-mobility">Social Mobility</h3>
+<p><strong>U5</strong> &emsp; <span class="arithmatex">\(\mu = \mu_0 \!\left(\dfrac{w_0}{w} - 1\right)\)</span></p>
+<hr />
+<h3 id="relative-elite-income-full-definition">Relative Elite Income — Full Definition</h3>
+<p><strong>U6</strong> &emsp; <span class="arithmatex">\(\varepsilon = \dfrac{1}{g} \cdot \dfrac{G - WL}{E}\)</span></p>
+<hr />
+<h3 id="relative-elite-numbers-simplified-dynamics">Relative Elite Numbers — Simplified Dynamics</h3>
+<p><strong>U7</strong> &emsp; <span class="arithmatex">\(\dot{e} = \mu_0 \dfrac{w_0 - w}{w}\)</span></p>
+<p><em>Derived from Eq. 4 by assuming elites and commoners share the same demographic growth rate; e = E/N.</em></p>
+<hr />
+<h3 id="wage-pure-capitalist-simplification-no-cultural-factor">Wage — Pure-Capitalist Simplification (no cultural factor)</h3>
+<p><strong>U8</strong> &emsp; <span class="arithmatex">\(W_{t+\tau} = a \!\left(\dfrac{G_t}{N_t}\right)^\alpha \!\left(\dfrac{D_t}{S_t}\right)^\beta\)</span></p>
+<p><em>Eq. 1 with C dropped; used for Antebellum US.</em></p>
+<hr />
+<h3 id="wage-command-economy-simplification">Wage — Command-Economy Simplification</h3>
+<p><strong>U9</strong> &emsp; <span class="arithmatex">\(W_t = C_t \!\left(\dfrac{G_t}{N_t}\right)\)</span></p>
+<p><em>Eq. 1 with D/S term dropped; used for USSR-type economies.</em></p>
+<hr />
+<h3 id="rural-population-simple-exponential">Rural Population — Simple Exponential</h3>
+<p><strong>U10</strong> &emsp; <span class="arithmatex">\(\dot{N}_\text{rur} = r_\text{rur} N_\text{rur}\)</span></p>
+<p><em>Unconstrained growth; superseded by Eq. 6.</em></p>
+<hr />
+<h3 id="migration-rate">Migration Rate</h3>
+<p><strong>U11</strong> &emsp; <span class="arithmatex">\(M = r_\text{rur} \!\left(\dfrac{N_\text{rur}}{K}\right)^\theta\)</span></p>
+<hr />
+<h3 id="labor-demand-proxy-contemporary-model">Labor Demand Proxy (Contemporary Model)</h3>
+<p><strong>U12</strong> &emsp; <span class="arithmatex">\(D_t = \dfrac{G_t}{2000\, P_t}\)</span></p>
+<hr />
+<h3 id="numbered-equations-papers-own-numbering">Numbered Equations (Paper's Own Numbering)</h3>
+<p><strong>(1)</strong> &emsp; <span class="arithmatex">\(W_{t+\tau} = a \!\left(\dfrac{G_t}{N_t}\right)^\alpha \!\left(\dfrac{D_t}{S_t}\right)^\beta C_t^\gamma\)</span></p>
+<p><em>General real-wage model. Three drivers — GDP per capita, labor demand/supply ratio, non-market cultural forces — combine multiplicatively. τ captures wage stickiness.</em></p>
+<hr />
+<p><strong>(2)</strong> &emsp; <span class="arithmatex">\(\log W_{t+\tau} = A + \alpha \log\!\left(\dfrac{G_t}{N_t}\right) + \beta \log\!\left(\dfrac{D_t}{S_t}\right) + \gamma \log C_t + \varepsilon_t\)</span></p>
+<p><em>Log-linear (regression) form of Eq. 1; suitable for OLS/ARIMA estimation.</em></p>
+<hr />
+<p><strong>(3)</strong> &emsp; <span class="arithmatex">\(\dot{E} = rE + \mu N\)</span></p>
+<p><em>Elite population ODE: natural demographic growth plus net social-mobility inflow.</em></p>
+<hr />
+<p><strong>(4)</strong> &emsp; <span class="arithmatex">\(\dot{E} = rE + \mu_0 \!\left(\dfrac{w_0 - w}{w}\right) N\)</span></p>
+<p><em>Eq. 3 with U5 substituted; mobility is now explicitly a function of relative wage.</em></p>
+<hr />
+<p><strong>(5)</strong> &emsp; <span class="arithmatex">\(\varepsilon = \dfrac{1 - w\lambda}{e}\)</span></p>
+<p><em>Relative elite income, simplified form. Numerator = fraction of GDP per capita not consumed by the wage bill; denominator = relative elite numbers. Simplification of U6.</em></p>
+<hr />
+<p><strong>(6)</strong> &emsp; <span class="arithmatex">\(\dot{N}_\text{rur} = r_\text{rur} N_\text{rur} - r_\text{rur} N_\text{rur}\!\left(\dfrac{N_\text{rur}}{K}\right)^\theta\)</span></p>
+<p><em>Rural population: exponential growth minus emigration; generalised logistic with nonlinearity exponent θ.</em></p>
+<hr />
+<p><strong>(7)</strong> &emsp; <span class="arithmatex">\(\dot{N}_\text{urb} = r_\text{urb} N_\text{urb} + r_\text{rur} N_\text{rur}\!\left(\dfrac{N_\text{rur}}{K}\right)^\theta\)</span></p>
+<p><em>Urban population: endogenous growth plus rural-to-urban immigration flow (the emigration term from Eq. 6).</em></p>
+<hr />
+<p><strong>(8)</strong> &emsp; <span class="arithmatex">\(\dot{D} = \rho D\)</span></p>
+<p><em>Labor demand (Antebellum): grows exponentially at rate ρ.</em></p>
+<hr />
+<p><strong>(9)</strong> &emsp; <span class="arithmatex">\(W = ag\!\left(\dfrac{D}{S}\right)^\beta\)</span></p>
+<p><em>Urban wage (Antebellum): simplified Eq. 1 with C omitted and α = 1.</em></p>
+<hr />
+<p><strong>(10)</strong> &emsp; <span class="arithmatex">\(w = \hat{a}\!\left(\dfrac{D}{\lambda N_\text{urb}}\right)^\beta\)</span></p>
+<p><em>Relative urban wage (Antebellum): Eq. 9 expressed as w = W/g, with S = λN_urb.</em></p>
+<hr />
+<p><strong>(11)</strong> &emsp; <span class="arithmatex">\(\dot{E} = r_e E + \mu_0\!\left(\dfrac{w_0}{w} - 1\right) N_\text{urb}\)</span></p>
+<p><em>Elite ODE (Antebellum): same structure as Eq. 4 but mobility sourced from urban population only; r replaced by r_e.</em></p>
+<hr />
+<p><strong>(12)</strong> &emsp; <span class="arithmatex">\(\varepsilon = \dfrac{1 - w\lambda}{e}\)</span></p>
+<p><em>Relative elite income (Antebellum application): identical to Eq. 5, re-stated for this model section.</em></p>
+<hr />
+<p><strong>(13)</strong> &emsp; <span class="arithmatex">\(\dot{e} = \mu_0 \dfrac{w_0 - w}{w}\)</span></p>
+<p><em>Relative elite numbers dynamics (Contemporary model): same as U7, now a formal numbered equation with recalibrated parameters.</em></p>
+<hr />
+<p><strong>(14)</strong> &emsp; <span class="arithmatex">\(\Psi = w^{-1} \dfrac{N_\text{urb}}{N} A_{20\text{–}29} \cdot \varepsilon^{-1} e \cdot \dfrac{Y}{N} D_\text{trust}\)</span></p>
+<p><em>Full expanded PSI: all components written out explicitly for empirical estimation.</em></p>
+<hr />
+<h2 id="variable-reference-table">Variable Reference Table</h2>
+<p><strong>"Computed"</strong> = the equation listed produces this variable as output.
+<strong>"Derived"</strong> = simple algebraic transformation of another variable; no ODE.
+<strong>"Measured"</strong> = empirical data used directly.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symbol</th>
+<th>Description</th>
+<th>How obtained</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ψ</td>
+<td>Political Stress Indicator</td>
+<td>Computed: U1, Eq. 14</td>
+<td>dimensionless (relative index)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MMP</td>
+<td>Mass Mobilization Potential</td>
+<td>Computed: U2</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>3</td>
+<td>EMP</td>
+<td>Elite Mobilization Potential</td>
+<td>Computed: U3</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SFD</td>
+<td>State Fiscal Distress</td>
+<td>Computed: U4</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>5</td>
+<td>W</td>
+<td>Real wage (inflation-adjusted)</td>
+<td>Computed: Eqs. 1, 9</td>
+<td>$ yr⁻¹ (per worker)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>w</td>
+<td>Relative wage = W/g</td>
+<td>Derived from W and g; output of Eq. 10 in Antebellum model</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>7</td>
+<td>w⁻¹</td>
+<td>Inverse relative wage ("misery index")</td>
+<td>Derived from w; enters U2, Eq. 14</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>8</td>
+<td>G</td>
+<td>Total GDP (inflation-adjusted dollars)</td>
+<td>Measured: MeasuringWorth (Officer &amp; Williamson)</td>
+<td>$ yr⁻¹</td>
+</tr>
+<tr>
+<td>9</td>
+<td>N</td>
+<td>Total population</td>
+<td>Measured: census / HSUS / BLS</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>10</td>
+<td>g</td>
+<td>GDP per capita = G/N</td>
+<td>Derived: G ÷ N</td>
+<td>$ person⁻¹ yr⁻¹</td>
+</tr>
+<tr>
+<td>11</td>
+<td>D</td>
+<td>Demand for labor (worker-years)</td>
+<td>Computed: Eq. 8 (Antebellum); U12 (Contemporary)</td>
+<td>persons (FTE workers)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>S</td>
+<td>Supply of labor (labor force size)</td>
+<td>Measured: BLS / HSUS; approximated as λN or λN_urb</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C</td>
+<td>Non-market cultural/coercive forces on wages</td>
+<td>Measured: real minimum wage as proxy (US Dept of Labor)</td>
+<td>$ hr⁻¹ (used as index; same scale as W)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>α</td>
+<td>Elasticity of wage to GDP per capita</td>
+<td>Estimated: regression (Eq. 2); set to 1 in Antebellum</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>15</td>
+<td>β</td>
+<td>Elasticity of wage to D/S ratio</td>
+<td>Estimated: regression (Eq. 2); set to 0.5 in Antebellum</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>16</td>
+<td>γ</td>
+<td>Elasticity of wage to cultural factor C</td>
+<td>Estimated: regression (Eq. 2)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>17</td>
+<td>a, â</td>
+<td>Scale parameter in wage equation</td>
+<td>Estimated: regression</td>
+<td>absorbs unit conversion</td>
+</tr>
+<tr>
+<td>18</td>
+<td>A</td>
+<td>log(a); intercept in log-transformed regression</td>
+<td>Estimated: regression (Eq. 2)</td>
+<td>log($ yr⁻¹)</td>
+</tr>
+<tr>
+<td>19</td>
+<td>τ</td>
+<td>Wage stickiness lag</td>
+<td>Estimated empirically; ~5 years in Contemporary model</td>
+<td>years</td>
+</tr>
+<tr>
+<td>20</td>
+<td>ε_t</td>
+<td>Regression error term</td>
+<td>Statistical residual (Eq. 2); modelled as ARIMA(1,0,1)</td>
+<td>log($ yr⁻¹)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>E</td>
+<td>Absolute elite numbers</td>
+<td>Computed: Eqs. 3, 4, 11</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>22</td>
+<td>e</td>
+<td>Relative elite numbers = E/N</td>
+<td>Derived: E ÷ N; dynamics from U7, Eq. 13</td>
+<td>dimensionless (fraction)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>ε</td>
+<td>Relative elite income (avg elite income / GDP per capita)</td>
+<td>Computed: U6 (full form), Eqs. 5 and 12 (simplified)</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>24</td>
+<td>ε⁻¹</td>
+<td>Inverse relative elite income (intraelite competition index)</td>
+<td>Derived from ε; enters U3, Eq. 14</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>25</td>
+<td>μ</td>
+<td>Net social mobility coefficient</td>
+<td>Computed: U5</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>26</td>
+<td>μ₀</td>
+<td>Mobility magnitude parameter</td>
+<td>Set: 0.002 y⁻¹ (Antebellum), 0.1 y⁻¹ (Contemporary)</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>27</td>
+<td>w₀</td>
+<td>Threshold wage at which net mobility = 0</td>
+<td>Set: 1.0 in both models</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>28</td>
+<td>L</td>
+<td>Labor force size</td>
+<td>Measured: BLS / HSUS</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>29</td>
+<td>λ</td>
+<td>Labor force participation rate ≈ L/N</td>
+<td>Measured / set: ≈ 0.5</td>
+<td>dimensionless (fraction)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>r</td>
+<td>Per capita demographic growth rate</td>
+<td>Measured: set from historical census data</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>31</td>
+<td>r_e</td>
+<td>Elite natural demographic growth rate</td>
+<td>Set: = r_rur in Antebellum model</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>32</td>
+<td>N_rur</td>
+<td>Rural population</td>
+<td>Computed: Eq. 6</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>33</td>
+<td>N_urb</td>
+<td>Urban population</td>
+<td>Computed: Eq. 7</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>34</td>
+<td>r_rur</td>
+<td>Per capita growth rate of rural population</td>
+<td>Set: 0.025 y⁻¹ (Antebellum)</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>35</td>
+<td>r_urb</td>
+<td>Endogenous growth rate of urban population</td>
+<td>Set: 0.015 y⁻¹ (Antebellum)</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>36</td>
+<td>K</td>
+<td>Rural carrying capacity (agricultural land limit)</td>
+<td>Set: 3.5 million persons for four Northeastern states</td>
+<td>persons</td>
+</tr>
+<tr>
+<td>37</td>
+<td>θ</td>
+<td>Migration nonlinearity exponent</td>
+<td>Set: 5</td>
+<td>dimensionless</td>
+</tr>
+<tr>
+<td>38</td>
+<td>M</td>
+<td>Per capita migration rate, rural → urban</td>
+<td>Computed: U11; used in Eqs. 6, 7</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>39</td>
+<td>ρ</td>
+<td>Exponential growth rate of labor demand</td>
+<td>Set: 0.03 y⁻¹ (Antebellum)</td>
+<td>yr⁻¹</td>
+</tr>
+<tr>
+<td>40</td>
+<td>P</td>
+<td>Labor productivity</td>
+<td>Measured: BLS (1947–present); Ferguson &amp; Wascher (pre-1947)</td>
+<td>$ hr⁻¹</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Y</td>
+<td>Total national debt</td>
+<td>Measured: US Department of the Treasury</td>
+<td>$</td>
+</tr>
+<tr>
+<td>42</td>
+<td>D_trust</td>
+<td>Public distrust in government (proportion distrusting)</td>
+<td>Measured: Pew Research Center surveys (from 1958)</td>
+<td>dimensionless (fraction 0–1)</td>
+</tr>
+<tr>
+<td>43</td>
+<td>s</td>
+<td>Government employees per total population</td>
+<td>Measured: Carter et al. 2004 (Table Ea894–903)</td>
+<td>dimensionless (fraction)</td>
+</tr>
+<tr>
+<td>44</td>
+<td>A₂₀₋₂₉</td>
+<td>Youth bulge index: proportion of population aged 20–29</td>
+<td>Measured: US Census Bureau</td>
+<td>dimensionless (fraction)</td>
+</tr>
+<tr>
+<td>45</td>
+<td>N_urb / N</td>
+<td>Urbanization rate</td>
+<td>Measured: Carter et al. 2004, <em>Historical Statistics of the United States</em></td>
+<td>dimensionless (fraction)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="application-using-the-wage-equation-in-a-colony-model">Application: Using the Wage Equation in a Colony Model</h2>
+<h3 id="the-problem-with-variables-1419">The problem with variables 14–19</h3>
+<p>In Turchin's paper, variables 14–19 (α, β, γ, a/â, A, τ) are determined by regression against 80–200 years of US wage, GDP, and labor data. Without an existing society to fit a curve to, a colony model has no such data. These parameters therefore shift from <em>things to be estimated</em> into <em>design choices that encode the economic and social character of the colony</em>. Each one has a real-world interpretation that guides sensible values.</p>
+<hr />
+<h3 id="variable-14-elasticity-of-wages-to-gdp-per-capita">Variable 14 — α (elasticity of wages to GDP per capita)</h3>
+<p>α answers: <em>when the colony's total output per person rises 1%, by how much do workers' wages rise?</em></p>
+<ul>
+<li><strong>α = 1</strong>: workers capture all productivity gains — the pure competitive market result. Appropriate for a high-demand frontier colony where labour is scarce and workers have strong bargaining power.</li>
+<li><strong>α = 0.5–0.8</strong>: realistic range for most mixed economies (Turchin's fitted value is 0.60). Capital and labour share productivity gains; institutional frictions and employer power hold wages below the full gain.</li>
+<li><strong>α &lt; 0.3</strong>: labour captures little; most growth goes to capital or the colonial authority. Appropriate for a corporate-run extraction colony or a plantation economy.</li>
+<li><strong>α ≈ 0</strong>: wages are set by the owner class regardless of output — the slave/indentured model, where Turchin notes the equation collapses to W = C.</li>
+</ul>
+<p><strong>Starting point for a free-labour frontier colony:</strong> α = 0.8–1.0.</p>
+<hr />
+<h3 id="variable-15-elasticity-of-wages-to-the-demandsupply-ratio">Variable 15 — β (elasticity of wages to the demand/supply ratio)</h3>
+<p>β answers: <em>how responsive are wages to labour market tightness?</em> A high β means wages rise sharply when workers are scarce relative to demand; a low β means wages barely move even when labour is very tight.</p>
+<ul>
+<li><strong>β = 1.65</strong>: Turchin's fitted value for twentieth-century US. Wages are highly responsive to market conditions.</li>
+<li><strong>β = 0.5</strong>: the Antebellum simplification; a more sluggish labour market.</li>
+<li><strong>β ≈ 0</strong>: wages are set administratively regardless of supply and demand — corporate or state colony with fixed pay scales.</li>
+<li><strong>β &gt; 2</strong>: a highly volatile frontier market where a small labour shortage produces large wage spikes; possible in early-stage colonies with very thin labour markets.</li>
+</ul>
+<p><strong>Starting point:</strong> β = 0.5–1.0 for a managed colony; β = 1.5–2.0 for a free-market frontier.</p>
+<hr />
+<h3 id="variable-16-elasticity-of-wages-to-culturalcoercive-factor-c">Variable 16 — γ (elasticity of wages to cultural/coercive factor C)</h3>
+<p>γ answers: <em>how much do non-market forces (law, custom, political power) amplify or suppress the market wage?</em></p>
+<p>In Turchin's model, C is proxied by the real minimum wage — a variable that rises when labour-friendly politics prevails and falls when it does not. For a colony:</p>
+<ul>
+<li><strong>γ = 0, C dropped</strong>: pure market model (Eq. U8). Appropriate if no labour regulation exists.</li>
+<li><strong>γ &gt; 0, C = colonial labour charter</strong>: a legal minimum wage or colonial charter sets a floor; γ measures how binding that floor is.</li>
+<li><strong>γ &lt; 0</strong>: coercive suppression — the colonial authority actively holds wages below the market level; C represents the degree of suppression.</li>
+</ul>
+<p><strong>Starting point:</strong> set γ = 0 and use Eq. U8 for simplicity unless the colony has explicit labour law you want to model. Introduce C and γ later if the model needs political dynamics around wages.</p>
+<hr />
+<h3 id="variable-17-a-a-scale-parameter">Variable 17 — a, â (scale parameter)</h3>
+<p>a has no independent economic meaning. It is a unit-conversion constant that makes the equation produce the right wage level given your chosen units for W, G, and N.</p>
+<p><strong>Practical approach:</strong> choose your initial conditions — a starting wage W₀, a starting GDP per capita g₀, and a starting D/S ratio — then solve for a:</p>
+<div class="arithmatex">\[a = \frac{W_0}{g_0^{\,\alpha} (D_0/S_0)^{\beta}}\]</div>
+<p>Set a once at initialisation. It does not change over time.</p>
+<hr />
+<h3 id="variable-18-a-loga">Variable 18 — A = log(a)</h3>
+<p>A is simply log(a), the intercept term that appears when the equation is log-transformed for regression (Eq. 2). In a simulation you work with Eq. 1 directly and set a as above; A is not needed separately.</p>
+<hr />
+<h3 id="variable-19-wage-stickiness-lag-years">Variable 19 — τ (wage stickiness lag, years)</h3>
+<p>τ captures the delay between economic conditions changing and wages catching up. In Turchin's model it reflects multi-year labour contracts and institutional inertia (~5 years in twentieth-century US).</p>
+<p>For a colony:</p>
+<table>
+<thead>
+<tr>
+<th>Colony type</th>
+<th>Suggested τ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Early-stage, no contracts, fluid labour pool</td>
+<td>1–2 years</td>
+</tr>
+<tr>
+<td>Established colony with annual wage-setting</td>
+<td>1–3 years</td>
+</tr>
+<tr>
+<td>Colony with multi-year indenture or union contracts</td>
+<td>3–7 years</td>
+</tr>
+<tr>
+<td>Highly bureaucratic or state-run colony</td>
+<td>5–10 years</td>
+</tr>
+</tbody>
+</table>
+<p>τ primarily affects the timing of instability waves, not their eventual amplitude. A short τ means the colony responds quickly to labour market shifts; a long τ means structural problems build up before wages adjust.</p>
+<hr />
+<h3 id="practical-starting-configuration-for-a-colony-wage-model">Practical starting configuration for a colony wage model</h3>
+<p>Use the pure-capitalist form (Eq. U8, dropping C):</p>
+<div class="arithmatex">\[W_{t+\tau} = a \left(\frac{G_t}{N_t}\right)^{\alpha} \left(\frac{D_t}{S_t}\right)^{\beta}\]</div>
+<ol>
+<li><strong>Choose colony type</strong> and set α and β from the ranges above.</li>
+<li><strong>Set initial conditions</strong> W₀, g₀ = G₀/N₀, (D/S)₀ and solve for a.</li>
+<li><strong>Set τ</strong> from the table above.</li>
+<li><strong>Run sensitivity sweeps</strong> over α and β to understand which matters most in your parameter range — this replaces the role that regression plays in fitting historical data.</li>
+</ol>
+<p>If the colony has politically driven wage dynamics (labour law, company policy, indenture), introduce C and γ at that point. Turchin's fitted values (α = 0.60, β = 1.65, γ = 0.45, τ = 5) provide a useful sanity-check benchmark: if your colony produces wildly different wage trajectories from a comparable initial state, the parameter choices deserve scrutiny.</p>
+<hr />
+<h2 id="initial-values-non-regression-parameters">Initial Values: Non-Regression Parameters</h2>
+<p>These are variables that must be set by the modeller before the simulation runs. They are not computed by the equations, and they are not regression coefficients. They are either initial conditions (the state of the colony at t = 0) or structural parameters (fixed properties of the colony that do not change unless deliberately varied). Their values determine the shape, pace, and character of the colony's instability trajectory.</p>
+<p>They are grouped below by subsystem.</p>
+<hr />
+<h3 id="population-and-demography">Population and Demography</h3>
+<h4 id="n_rur0-and-n_urb0-initial-rural-and-urban-populations">N_rur(0) and N_urb(0) — Initial rural and urban populations</h4>
+<p>These set the starting demographic balance. Turchin uses N_rur(0) = 0.3K and N_urb(0) = 0.1 × N_rur(0) for the Antebellum case — a predominantly rural colony with a small urban nucleus.</p>
+<p>The ratio N_urb(0)/N matters because urban labour supply S = λN_urb directly sets the initial wage level through Eq. 10. A small initial urban population means labour is scarce and wages start high. As the city grows (Eq. 7), supply catches up with demand and wages fall. The timing of that fall is the first instability signal.</p>
+<table>
+<thead>
+<tr>
+<th>Starting balance</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Very rural (N_urb/N &lt; 0.1)</td>
+<td>Wages start high; long initial stable period; late but steep wage collapse as cities fill</td>
+</tr>
+<tr>
+<td>Mixed (N_urb/N ≈ 0.3–0.5)</td>
+<td>Moderate initial wages; pressure begins sooner; more gradual decline</td>
+</tr>
+<tr>
+<td>Already urbanised (N_urb/N &gt; 0.6)</td>
+<td>Wages start under pressure immediately; early instability, shorter cycle</td>
+</tr>
+</tbody>
+</table>
+<h4 id="r_rur-rural-per-capita-growth-rate">r_rur — Rural per capita growth rate</h4>
+<p>This is the intrinsic rate of natural population increase in the countryside. Turchin sets it at 0.025 yr⁻¹ (2.5% per year) for Antebellum America — a high-fertility pre-industrial demographic.</p>
+<p>r_rur is the engine that drives emigration from the countryside to the cities (Eq. 6). A faster rate means the rural population approaches K sooner, the emigration term in Eq. 6 activates earlier, and urban labour supply grows faster, depressing wages sooner.</p>
+<table>
+<thead>
+<tr>
+<th>r_rur value</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.01–0.015 yr⁻¹</td>
+<td>Low-fertility colony (screened workers, life extension, urban norms); slow demographic pressure; long quiet phase</td>
+</tr>
+<tr>
+<td>0.02–0.03 yr⁻¹</td>
+<td>Antebellum-equivalent; vigorous natural increase; cycle unfolds over 50–100 years</td>
+</tr>
+<tr>
+<td>0.04–0.06 yr⁻¹</td>
+<td>Rapid colonial expansion (encouraged natalism, young population); cycle compressed to 30–50 years; crises arrive early</td>
+</tr>
+</tbody>
+</table>
+<h4 id="r_urb-urban-endogenous-growth-rate">r_urb — Urban endogenous growth rate</h4>
+<p>Turchin sets r_urb = 0.015 yr⁻¹ — lower than r_rur, reflecting higher mortality and lower fertility in cities. The gap r_rur − r_urb determines how much of urban growth comes from natural increase versus immigration from the countryside.</p>
+<p>For a colony with good medical infrastructure (2300AD-level), the urban/rural mortality gap may be small or absent. Setting r_urb close to r_rur means urban population grows partly on its own, not just from rural inflow. This slows the wage-depressing surge because urban supply does not spike as sharply when rural migration arrives.</p>
+<h4 id="k-rural-carrying-capacity">K — Rural carrying capacity</h4>
+<p>K is the maximum rural population the available agricultural land can sustain. It sets the ceiling against which r_rur pushes. The ratio N_rur(0)/K is the most important single parameter in the Antebellum model: at 0.3 there is substantial headroom before emigration pressure builds; at 0.8 the colony is already land-stressed.</p>
+<p>Crucially, K may not be fixed. A colony that is actively clearing land, terraforming, or expanding agricultural infrastructure has a rising K. A rising K delays the onset of emigration and extends the stable phase.</p>
+<table>
+<thead>
+<tr>
+<th>N_rur(0)/K</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.2</td>
+<td>Long pre-crisis stability; rural population grows freely for generations before emigration kicks in</td>
+</tr>
+<tr>
+<td>0.3–0.4</td>
+<td>Turchin Antebellum baseline; 50–80 years before crisis</td>
+</tr>
+<tr>
+<td>0.6–0.8</td>
+<td>Colony is already near its land ceiling; emigration and wage pressure begin immediately</td>
+</tr>
+<tr>
+<td>K growing at rate k</td>
+<td>Each percentage point of k adds roughly equivalent time to the stable phase; active terraforming is a structural stabiliser</td>
+</tr>
+</tbody>
+</table>
+<h4 id="emigration-nonlinearity-exponent">θ — Emigration nonlinearity exponent</h4>
+<p>θ controls the shape of the emigration curve (U11). At θ = 1 emigration is linear — a small rural population still sends people to the cities. At θ = 5 (Turchin's value) emigration is negligible until N_rur approaches K, then rises sharply. At θ = 10 or higher the curve approaches a step function: nothing, then suddenly everyone.</p>
+<p>θ determines whether the wage crisis arrives gradually or suddenly:</p>
+<table>
+<thead>
+<tr>
+<th>θ value</th>
+<th>Crisis character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>Gentle, long-running wage decline beginning early; no sharp transition</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Turchin baseline; moderate nonlinearity; crisis arrives as an acceleration, not a cliff</td>
+</tr>
+<tr>
+<td>10+</td>
+<td>Stability is maintained until near K, then an abrupt surge in urban migration depresses wages rapidly; boom-bust character</td>
+</tr>
+</tbody>
+</table>
+<p>A colony with efficient internal transport (making migration easy even at low rural density) is better modelled with low θ. A colony with difficult terrain or strong rural community ties that keep people on the land until it is truly exhausted is better modelled with high θ.</p>
+<hr />
+<h3 id="labour-market-structure">Labour Market Structure</h3>
+<h4 id="growth-rate-of-labour-demand">ρ — Growth rate of labour demand</h4>
+<p>ρ is the rate at which the economy's demand for workers expands (Eq. 8). It reflects investment, industrial expansion, and economic development — not just population. Turchin sets ρ = 0.03 yr⁻¹ for Antebellum America, just above r_urb.</p>
+<p>The critical comparison is ρ vs. (r_urb + immigration inflow rate). If demand grows faster than supply, wages rise. If supply overtakes demand, wages fall. The transition from one regime to the other is the turning point of the wage cycle.</p>
+<table>
+<thead>
+<tr>
+<th>ρ relative to labour supply growth</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ρ &gt; supply growth (early colony boom)</td>
+<td>Wages rise during initial development phase; high MMP delayed</td>
+</tr>
+<tr>
+<td>ρ ≈ supply growth</td>
+<td>Wages flat; stable early period</td>
+</tr>
+<tr>
+<td>ρ &lt; supply growth</td>
+<td>Wages fall immediately from founding; MMP builds from the start</td>
+</tr>
+<tr>
+<td>ρ falling over time (maturing colony)</td>
+<td>Replicates the Turchin contemporary US pattern: boom then stagnation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="labour-force-participation-rate">λ — Labour force participation rate</h4>
+<p>λ ≈ L/N, the fraction of the total population that is economically active. Turchin treats it as a constant ≈ 0.5 (accounting for children, elderly, and non-workers). It scales urban labour supply: S = λN_urb.</p>
+<p>For a colony, λ can differ substantially from 0.5:</p>
+<table>
+<thead>
+<tr>
+<th>λ value</th>
+<th>Colony type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.7–0.85</td>
+<td>Working-age-selected settlers; few children initially; high participation rate — wages suppressed more than population alone suggests</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>Earth baseline; standard assumption if unknown</td>
+</tr>
+<tr>
+<td>0.3–0.4</td>
+<td>Colony with large dependent population (many children or elderly); effective labour supply lower than headcount; wages held up</td>
+</tr>
+<tr>
+<td>Rising λ over time</td>
+<td>Demographic echo — as founding children reach working age, λ rises and wages fall; a predictable second-wave pressure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="elite-formation">Elite Formation</h3>
+<h4 id="0-mobility-magnitude-parameter">μ₀ — Mobility magnitude parameter</h4>
+<p>μ₀ sets how fast elites accumulate when wages are below the threshold w₀ (U5). Turchin calibrated it at 0.002 yr⁻¹ for Antebellum America and 0.1 yr⁻¹ for contemporary America — a 50-fold difference reflecting that social mobility was far more sluggish in an agrarian economy than in a modern one.</p>
+<p>μ₀ controls the lag between wage depression and elite overproduction. A high μ₀ means elites form quickly in response to economic opportunity; EMP rises fast and the instability cycle is compressed. A low μ₀ means elite accumulation is slow even when economic conditions favour it; there is a long delay between wage fall and the elite overproduction crisis.</p>
+<table>
+<thead>
+<tr>
+<th>μ₀ value</th>
+<th>Elite dynamics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.005 yr⁻¹</td>
+<td>Slow, aristocratic accumulation; elite numbers barely respond to wages within a generation; instability cycle very long</td>
+</tr>
+<tr>
+<td>0.005–0.02 yr⁻¹</td>
+<td>Antebellum range; moderate responsiveness; elite overproduction lags wage depression by decades</td>
+</tr>
+<tr>
+<td>0.05–0.15 yr⁻¹</td>
+<td>Contemporary US range; fast elite formation; EMP tracks MMP closely; instability cycle compressed</td>
+</tr>
+<tr>
+<td>&gt; 0.2 yr⁻¹</td>
+<td>Hyperfluid social mobility (e.g. gold-rush colony); elites form and dissolve rapidly; volatile but self-correcting</td>
+</tr>
+</tbody>
+</table>
+<h4 id="w0-mobility-threshold">w₀ — Mobility threshold</h4>
+<p>w₀ is the relative wage at which net social mobility is zero (U5). Set to 1.0 in both Turchin models, meaning the crossover between upward and downward mobility happens exactly at the baseline wage level.</p>
+<p>A higher w₀ means elites continue to accumulate even when wages are relatively good — a socially ambitious colony where prosperity breeds more aspiring elites. A lower w₀ means elite formation only accelerates during genuinely severe wage depression.</p>
+<table>
+<thead>
+<tr>
+<th>w₀ value</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 1.2</td>
+<td>Elite formation occurs even in prosperous conditions; EMP rises early; colony prone to elite overproduction before wages collapse</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>Turchin baseline</td>
+</tr>
+<tr>
+<td>&lt; 0.8</td>
+<td>Elite growth only when wages are badly depressed; long lag between economic stress and political elite conflict</td>
+</tr>
+</tbody>
+</table>
+<h4 id="e0-initial-relative-elite-fraction">e(0) — Initial relative elite fraction</h4>
+<p>The starting proportion of elites in the population. Turchin initialises elites at 1% of the urban population. The choice affects how much margin exists before elite overproduction begins.</p>
+<table>
+<thead>
+<tr>
+<th>e(0)</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Very small (&lt; 0.5%)</td>
+<td>Long ramp-up before EMP becomes significant; colony has a pronounced stable founding phase</td>
+</tr>
+<tr>
+<td>1–2%</td>
+<td>Turchin baseline; moderate starting competition</td>
+</tr>
+<tr>
+<td>&gt; 5%</td>
+<td>Colony founded by or quickly dominated by an established elite class; EMP significant from the start; structural instability is baked in early</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="state-structure">State Structure</h3>
+<h4 id="s-government-positions-per-population">s — Government positions per population</h4>
+<p>s sets the denominator in EMP: how many elite-eligible positions the colonial state provides per person (Eq. U3). A higher s means more positions relative to elites, reducing competition and lowering EMP. A lower s (or a rapidly growing elite with a fixed s) means competition for scarce offices intensifies.</p>
+<p>In the Antebellum model s is treated as a slowly changing empirical quantity (it roughly doubled over the period). For a colony, s is a policy variable:</p>
+<table>
+<thead>
+<tr>
+<th>s value</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High s (large government, many offices)</td>
+<td>EMP structurally suppressed; colonial bureaucracy absorbs elite aspirants; stabilising</td>
+</tr>
+<tr>
+<td>Low s (minimal government)</td>
+<td>Elite competition focused on private economic positions; EMP sensitive to elite numbers; destabilising</td>
+</tr>
+<tr>
+<td>s falling over time</td>
+<td>Positions grow slower than elites; EMP rises even if elite numbers are constant — classic bureaucratic squeeze</td>
+</tr>
+<tr>
+<td>s rising with economic expansion</td>
+<td>New offices absorb new elites; EMP held down; sustained expansion is a long-run stabiliser</td>
+</tr>
+</tbody>
+</table>
+<h4 id="y0-initial-national-debt-and-d_trust0-initial-public-distrust">Y(0) — Initial national debt and D_trust(0) — Initial public distrust</h4>
+<p>These set the State Fiscal Distress (SFD) component of Ψ. A colony founded debt-free and with high institutional trust starts with SFD ≈ 0, which acts as a stabiliser regardless of MMP and EMP values. A colony founded with inherited debt (e.g. corporate financing costs, terraforming loans) or with low initial trust in the colonial authority starts with SFD already elevated, amplifying whatever MMP and EMP produce.</p>
+<p>For most colony models, SFD is best treated as a slowly evolving background variable whose initial value is a design choice about the colony's political starting conditions.</p>
+<hr />
+<h2 id="outputs">Outputs</h2>
+<h3 id="what-the-model-produces">What the model produces</h3>
+<p>Running the equations forward from initial conditions generates time series for every state variable. The most important outputs, in order of interpretive value, are:</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Variable #</th>
+<th>What it reveals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relative wage</td>
+<td>6 (w)</td>
+<td>Popular welfare; the primary driver of MMP</td>
+</tr>
+<tr>
+<td>Relative elite numbers</td>
+<td>22 (e)</td>
+<td>Elite overproduction; the primary driver of EMP</td>
+</tr>
+<tr>
+<td>Relative elite income</td>
+<td>23 (ε)</td>
+<td>Intraelite competition intensity; falling ε means the elite pie is being sliced thinner</td>
+</tr>
+<tr>
+<td>MMP</td>
+<td>2</td>
+<td>Popular mobilisation pressure</td>
+</tr>
+<tr>
+<td>EMP</td>
+<td>3</td>
+<td>Elite competition pressure</td>
+</tr>
+<tr>
+<td>SFD</td>
+<td>4</td>
+<td>State fiscal and legitimacy stress</td>
+</tr>
+<tr>
+<td>Ψ (PSI)</td>
+<td>1</td>
+<td>Composite structural pressure toward instability</td>
+</tr>
+</tbody>
+</table>
+<p>The ODEs (Eqs. 3, 4, 6, 7, 8, 13) integrate forward in time and produce smooth trajectories. Ψ is then computed algebraically from those trajectories at each time step.</p>
+<hr />
+<h3 id="interpreting-variable-1">Interpreting Ψ (variable 1)</h3>
+<p>Ψ is a dimensionless relative index, not a probability or a count. Its absolute value at any single moment is not meaningful in isolation — what matters is its trend and its rate of change.</p>
+<p><strong>Ψ as a leading indicator, not a crisis trigger.</strong> Turchin is explicit that specific triggering events (assassinations, famines, military defeats) are outside the model. Ψ measures the structural pressure that makes a society <em>susceptible</em> to a crisis if a trigger occurs — not whether a trigger will occur. A society with low Ψ can absorb shocks; one with high Ψ tips into crisis on almost any provocation.</p>
+<p><strong>The multiplicative structure amplifies alignment.</strong> Because Ψ = MMP × EMP × SFD, the index rises steeply when all three components grow together. A society where popular distress is high but elites are unified (low EMP) and the state is solvent (low SFD) may be uncomfortable but is not on the edge of collapse. It is the <em>coincidence</em> of all three pressures that creates genuine structural crisis. Watch for the three components to begin rising in phase with each other — that alignment is more significant than the level of any single component.</p>
+<p><strong>What the shape of the Ψ curve means:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ψ behaviour</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flat or declining</td>
+<td>Structural conditions stable or improving; no instability wave building</td>
+</tr>
+<tr>
+<td>Slow monotonic rise</td>
+<td>One or two components building; structural stress accumulating, but asymmetrically</td>
+</tr>
+<tr>
+<td>Accelerating rise (curve bending upward)</td>
+<td>All three components reinforcing each other; the colony is in the late pre-crisis phase</td>
+</tr>
+<tr>
+<td>Rate of change increasing faster than Ψ itself</td>
+<td>The system has entered a positive feedback loop; crisis is near regardless of triggers</td>
+</tr>
+<tr>
+<td>Ψ plateaus then falls</td>
+<td>A structural relief event has occurred — wages recovered, debt reduced, elite numbers thinned; crisis has been avoided or deferred</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="crisis-indicators">Crisis indicators</h3>
+<p>No single threshold in the equations defines a "crisis." Turchin does not set one, and the ODEs have no discontinuity. A crisis in the real world is a state transition that occurs when accumulated structural pressure meets a trigger. For modelling purposes, the following conditions, <em>in combination</em>, indicate that the system is in a pre-crisis state:</p>
+<p><strong>Necessary conditions (all should be true):</strong></p>
+<ol>
+<li>
+<p><strong>w &lt; w₀ for longer than τ years.</strong> Wages have been structurally depressed long enough that labour contracts have fully adjusted. Workers are no longer experiencing a temporary dip — they are in a new, lower equilibrium. This is the signal that MMP has structural, not cyclical, causes.</p>
+</li>
+<li>
+<p><strong>e has grown significantly from its initial value</strong> — typically 2× or more. Elite numbers have expanded well beyond the positions the colonial economy and state can absorb. Intraelite competition for scarce offices and resources is now structurally intense.</p>
+</li>
+<li>
+<p><strong>ε is falling despite a growing economy.</strong> If the total economic surplus is growing but average elite income is falling, the elite is being diluted. This is the condition that turns passive elite competition into active factional conflict — established elites begin to feel threatened, not just crowded.</p>
+</li>
+<li>
+<p><strong>Ψ has at least doubled from its historical minimum.</strong> The index has moved well above its baseline, and the trajectory is upward.</p>
+</li>
+</ol>
+<p><strong>The strongest single crisis signal</strong> is a simultaneous inflection in all three components of Ψ — MMP, EMP, and SFD all accelerating in the same decade. In both of Turchin's case studies (Antebellum 1840s–1850s, Contemporary US 2000s–2010s), this convergence preceded the crisis peak by 10–20 years, which is the lead time the PSI provides.</p>
+<hr />
+<h3 id="running-the-model-piecewise">Running the model piecewise</h3>
+<p>Your intuition is correct. The equations are continuous ODEs, but the parameters that govern them are not necessarily constant over the life of a colony. As the colony's structural conditions change — its economic regime, its political arrangements, its relationship to the metropole — the appropriate parameter values change. The state variables (N_rur, N_urb, E, w, ε, ...) carry over continuously; only the structural parameters are reset at each regime transition.</p>
+<p>This is standard practice in dynamical modelling and maps naturally onto the historical phases of a colony:</p>
+<p><strong>Phase 1 — Foundation.</strong> High ρ (rapid economic expansion driven by construction and resource development), high r_rur (young immigrant population), N_rur/K low (land abundant), λ high (working-age settlers), μ₀ moderate, s high (many positions to fill). Ψ is low and may actually fall for several decades as wages rise and elites are few.</p>
+<p><strong>Phase 2 — Growth and pressure.</strong> N_rur approaches K, emigration to cities increases, urban labour supply overtakes demand, w begins to fall. ρ may moderate as the initial construction boom ends. Ψ begins to rise. At this point, a policy regime shift (increasing s, raising K through new development, changing α via labour law) can reset the trajectory.</p>
+<p><strong>Phase 3 — Mature stress.</strong> w persistently below w₀, e growing rapidly, ε being diluted. If no structural relief has been introduced, Ψ is accelerating. This is when the model's usefulness as a forecasting tool is highest — it identifies the pre-crisis window.</p>
+<p><strong>Phase 4 — Resolution or collapse.</strong> Outside the model. If a crisis occurs, the post-crisis parameters are dramatically different: E may have been drastically reduced (elite culling), Y may have spiked (war debt), D_trust may have collapsed. The post-crisis initial conditions become the starting point for the next cycle.</p>
+<p><strong>What triggers a parameter reset in the model:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Parameters affected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New industry or resource discovery</td>
+<td>ρ rises; possibly K rises</td>
+</tr>
+<tr>
+<td>Terraforming or land clearance</td>
+<td>K rises</td>
+</tr>
+<tr>
+<td>Change in immigration policy</td>
+<td>r_rur and N_rur(0) of new settlers</td>
+</tr>
+<tr>
+<td>Labour law reform</td>
+<td>α rises; γ and C may be introduced</td>
+</tr>
+<tr>
+<td>Colonial government expansion</td>
+<td>s rises</td>
+</tr>
+<tr>
+<td>Corporate takeover or regime change</td>
+<td>α falls; β may fall; γ changes sign</td>
+</tr>
+<tr>
+<td>Debt crisis or fiscal austerity</td>
+<td>Y rises; D_trust falls; SFD jumps</td>
+</tr>
+<tr>
+<td>Elite purge or emigration wave</td>
+<td>e drops; ε recovers; EMP resets</td>
+</tr>
+<tr>
+<td>Epidemic or war</td>
+<td>N_rur, N_urb, E all drop; w spikes (labour scarcity); temporary relief</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these events is a regime boundary. The model runs continuously within a phase; at a boundary, you reset the relevant parameters and continue. The state variables at the moment of transition are the initial conditions for the next phase — the history is embedded in those values.</p>
+<hr />
+<h3 id="demographic-structure-what-the-model-does-and-does-not-capture">Demographic structure: what the model does and does not capture</h3>
+<p><strong>The short answer: A₂₀₋₂₉ is exogenous in both of Turchin's models.</strong> It is not generated by the population ODEs — it is either held constant (Antebellum simplification) or supplied as a measured empirical time series (Contemporary model from US Census data). The ODEs for N_rur (Eq. 6) and N_urb (Eq. 7) track only <em>total population numbers</em>, with no age cohort structure at all. The youth bulge appears as a factor in MMP but the model that produces population trajectories has no mechanism that could generate it.</p>
+<p>Turchin acknowledges this directly for the Antebellum case: because the model assumes constant per capita birth rates, "the implied age structure is constant, and there can be no youth bulges." He treats A₂₀₋₂₉ as a parameter estimated from empirical data rather than something the model itself produces.</p>
+<p>This is a significant structural gap for a forward-looking colony model, because the youth bulge is not a random shock — it is a <em>predictable, lagged consequence of earlier demographic events</em>. A birth-rate surge today shows up in A₂₀₋₂₉ approximately 20–25 years later (the Easterlin mechanism). The gap between the demographic event and its labour-market consequence is the mechanism Turchin's verbal theory relies upon to explain why instability waves have the period they do.</p>
+<p><strong>What this means for a colony model:</strong></p>
+<p>The model gives you three options for handling A₂₀₋₂₉:</p>
+<p><strong>Option 1 — Hold constant (Turchin Antebellum approach).</strong> Assume age structure does not vary. Appropriate if birth rates are stable and the colony is not experiencing a demographic transition. This effectively removes the youth-bulge component from MMP and lets wages and elite dynamics do all the work. Simplest; understates MMP during any period of rapid prior population growth.</p>
+<p><strong>Option 2 — Supply as a scheduled external input.</strong> Project A₂₀₋₂₉ forward based on assumed birth rate trajectories with a fixed ~22-year lag. If you set r_rur (birth rate) as a function of time in the early colony, the resulting youth bulge can be calculated in advance and fed in as a time-indexed parameter. This is the right approach for a piecewise model: the bulge is a <em>known future event</em> that can be scheduled into the parameter table, much like a regime change. It does not require modelling cohorts — just tracking the integral of births 20–25 years prior.</p>
+<p>Example: a colony with very high natalism in years 1–30 (r_rur = 0.04–0.06) will produce a large 20–29 cohort in years 22–52. That bulge can be entered as a step increase in A₂₀₋₂₉ at the appropriate time, simultaneous with the labour-market pressure from those workers entering the job market.</p>
+<p><strong>Option 3 — Add a cohort layer.</strong> Model age cohorts explicitly by splitting N_rur and N_urb into age bands and applying differential survival and fertility rates. This would generate A₂₀₋₂₉ endogenously and allow feedback between economic conditions and birth rates. It is a substantial extension of the model, roughly doubling its complexity, and is only warranted if the timing and shape of youth bulges are a primary question for the scenario.</p>
+<p><strong>The practical consequence of ignoring the youth bulge:</strong></p>
+<p>If A₂₀₋₂₉ is held constant while the colony is actually experiencing a demographic surge, MMP will be <em>underestimated</em> during the bulge years. The model will show wage pressure (from N_urb rising) but will miss the additional mobilisation potential that comes from a large cohort of young adults who are simultaneously under-employed and at peak political radicalism. In historical cases this has consistently been a multiplier on instability: falling wages alone may be insufficient to trigger a crisis, but falling wages coinciding with a youth bulge is repeatedly associated with upheaval.</p>
+<p>For a colony that expects rapid early growth, Option 2 is the minimum adequate treatment: schedule the bulge as a known future input and observe how it interacts with the wage and elite trajectories.</p>
+<hr />
+<h3 id="has-anyone-integrated-a-cohort-model-literature-note">Has anyone integrated a cohort model? Literature note</h3>
+<p>The short answer is no. A search of the cliodynamics and demographic-structural instability literature finds no published work that integrates a full age-cohort demographic model into a Turchin-type ODE system. Turchin's own later books (<em>Secular Cycles</em> 2009, <em>Ages of Discord</em> 2016, <em>End Times</em> 2023) all treat A₂₀₋₂₉ as empirical input. Korotayev, Malkov, and Romanov use demographic growth rates in their secular-cycle models but still supply the youth bulge proportion externally. Urdal's empirical youth-bulge instability research tests the relationship statistically but is not an ODE framework. Delay differential equations as a tool for modelling the 20-year cohort lag have not been applied to this problem in the published literature.</p>
+<p>The standard field rationale for this gap: for historical analysis, birth-rate records are already known, so there is little analytical gain from deriving the cohort structure endogenously. The calculation adds complexity without improving fit.</p>
+<p>For a forward-looking colony model, however, the situation is reversed — birth rates are not known in advance, and the youth-bulge trajectory is precisely one of the things you want to project. A side module is warranted.</p>
+<hr />
+<h3 id="a-cohort-pipeline-as-a-side-module">A cohort pipeline as a side module</h3>
+<p>The goal of the side module is narrow: produce a time series for A₂₀₋₂₉ that feeds into MMP. Everything else in the main model remains unchanged. The module needs only one input from the main model (total population N, or its growth rate) and returns one output.</p>
+<p><strong>Minimal ODE pipeline.</strong> Divide the population up to age 29 into five compartments and advance them as a chain:</p>
+<div class="arithmatex">\[\frac{dC_1}{dt} = \beta N - \frac{C_1}{5} \qquad \text{(ages 0–4; births enter, cohort exits after 5 years)}\]</div>
+<div class="arithmatex">\[\frac{dC_i}{dt} = \frac{C_{i-1}}{5} - \frac{C_i}{5} \qquad i = 2, 3, 4 \quad \text{(ages 5–9, 10–14, 15–19)}\]</div>
+<div class="arithmatex">\[\frac{dC_5}{dt} = \frac{C_4}{5} - \frac{C_5}{10} \qquad \text{(ages 20–29; 10-year cohort)}\]</div>
+<div class="arithmatex">\[A_{20\text{–}29}(t) = \frac{C_5(t)}{N(t)}\]</div>
+<p>where β is the per capita birth rate (initially proportional to r_rur or r_urb, adjusted as the colony matures). This adds five ODEs to the system. Their initial conditions are set by the assumed age distribution at colony founding — typically a working-age-heavy distribution (low C₁, high C₃/C₄) for a screened settler population.</p>
+<p><strong>Simpler alternative: fixed lag.</strong> If ODE complexity is undesirable, approximate A₂₀₋₂₉ directly from past birth rates:</p>
+<div class="arithmatex">\[A_{20\text{–}29}(t) \approx \frac{\beta(t - 22) \cdot N(t - 22)}{N(t)}\]</div>
+<p>This is a lookup: the size of the 20–29 cohort today equals the births 22 years ago, divided by the current total population. It is easy to implement in a spreadsheet and requires only a stored history of N(t). The 22-year figure is approximate; sensitivity to the exact lag is low.</p>
+<p><strong>Optional: economic feedback on birth rates.</strong> The Easterlin hypothesis predicts that birth rates rise when the generation entering adulthood faces good economic conditions (high w) and fall when they face poor ones — because people have more children when they feel optimistic about the future. This creates a delayed feedback loop:</p>
+<div class="arithmatex">\[\beta(t) = \beta_0 + \delta \cdot (w(t) - w_0)\]</div>
+<p>A higher relative wage today → higher birth rate → a larger youth cohort 22 years later → downward pressure on wages. This is the mechanism that produces approximately 50-year instability cycles — closely matching the Kondratiev wave period discussed in the future-history document. Whether to include this feedback is a design choice: it generates richer long-run dynamics but adds a parameter (δ) that is difficult to calibrate without data.</p>
+<p><strong>Coupling summary.</strong> The demographic side module touches the main model at exactly two points:</p>
+<table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>Variable</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main → Side</td>
+<td>N(t) or r_rur</td>
+<td>Birth-rate calculation in side module</td>
+</tr>
+<tr>
+<td>Side → Main</td>
+<td>A₂₀₋₂₉(t)</td>
+<td>MMP equation (U2, Eq. 14)</td>
+</tr>
+</tbody>
+</table>
+<p>If the Easterlin feedback is included, a third coupling is added: w(t) from the main model feeds into β(t) in the side module. Otherwise the side module runs as a pure one-way satellite.</p>
+<hr />
+<h2 id="explanations">Explanations</h2>
+<h3 id="economic-elasticity">Economic Elasticity</h3>
+<p><strong>Elasticity</strong> is a measure of how sensitive one variable is to a proportional change in another. Specifically, the elasticity of Y with respect to X is: <em>"if X increases by 1%, by what percentage does Y change?"</em> An elasticity of 1 means the two move in exact proportion; an elasticity of 0.5 means Y rises only half as fast as X; an elasticity of 2 means Y rises twice as fast.</p>
+<p>In this paper the wage equation (Eq. 1) takes the form:</p>
+<div class="arithmatex">\[W \propto \left(\frac{G}{N}\right)^\alpha \left(\frac{D}{S}\right)^\beta C^\gamma\]</div>
+<p>The exponents α, β, and γ <em>are</em> the elasticities:</p>
+<ul>
+<li><strong>α</strong> is the elasticity of real wages with respect to GDP per capita. If α = 1 (used in the Antebellum model), a 10% rise in GDP per capita produces a 10% rise in wages — workers capture all productivity gains. If α &lt; 1 workers capture less than all gains.</li>
+<li><strong>β</strong> is the elasticity of real wages with respect to the labor demand/supply ratio D/S. If β = 0.5 (Antebellum value), doubling the demand/supply ratio raises wages by only ~41% (2^0.5 − 1), not 100%. This reflects that wages respond to labor market tightness, but with diminishing returns.</li>
+<li><strong>γ</strong> is the elasticity of real wages with respect to the cultural/coercive factor C (proxied by the real minimum wage). It captures how much non-market forces amplify or dampen the market-determined wage level.</li>
+</ul>
+<p>Using a multiplicative power-law form (rather than, say, an additive form) means the elasticities are constant across the full range of the data — a standard and empirically well-supported assumption for economic relationships of this type. It also means the equation becomes linear after log-transformation (Eq. 2), which is why log-space regression can estimate α, β, and γ directly as regression coefficients.</p>
+<hr />
+<h3 id="regression">Regression</h3>
+<p><strong>Regression</strong> is a statistical procedure for estimating the relationship between a dependent variable (here, real wages W) and one or more independent variables (here, GDP per capita, D/S ratio, cultural factor C). Given a dataset of observed values, regression finds the coefficients — in this paper α, β, γ, and A — that make the equation fit the data as closely as possible, typically by minimising the sum of squared errors between the predicted and observed values of the dependent variable.</p>
+<p><strong>Why log-transform first (Eq. 2)?</strong> The multiplicative form of Eq. 1 becomes additive after taking logarithms:</p>
+<div class="arithmatex">\[\log W = A + \alpha \log(G/N) + \beta \log(D/S) + \gamma \log C + \varepsilon_t\]</div>
+<p>This is now a standard <em>linear regression</em> — the unknown parameters (A, α, β, γ) appear linearly, which is much easier to estimate than fitting the nonlinear Eq. 1 directly. The log transformation also stabilises variance in the data (wages vary over a wide range; their logarithms vary much less), which is a standard requirement for reliable regression estimates.</p>
+<p><strong>The error term ε_t</strong> represents everything the model does not explain — measurement error, omitted variables, random shocks. Its subscript t indicates that the errors at different time points are potentially correlated with each other (autocorrelation), which is typical of economic time series: a wage shock in one year tends to persist into the next. Turchin models this autocorrelation explicitly using an <strong>ARIMA(1,0,1)</strong> error structure, which accounts for both a first-order autoregressive component (AR1: this year's error depends on last year's) and a first-order moving-average component (MA1: this year's error depends on last year's shock). This prevents the regression from treating serially correlated errors as if they were independent, which would otherwise produce overconfident (too-narrow) uncertainty estimates.</p>
+<p><strong>Regression in a theoretical context.</strong> In everyday applied work, regression is often exploratory: you have data and want to discover whether and how variables relate, choosing a functional form (often linear) for convenience. Here the sequence is reversed. Structural-demographic theory specifies <em>which</em> variables belong in the wage equation and <em>why</em> — from economic reasoning about labor markets and power relations. The multiplicative power-law form of Eq. 1 is also theory-derived, not chosen for convenience. Regression then plays two roles: it <strong>confirms</strong> that the theoretically nominated variables account for observed wage variation, and it <strong>calibrates</strong> the elasticity values α, β, and γ — the theory says these factors matter but does not predict their magnitude; the data supply the magnitudes. Model selection is likewise constrained: Turchin adds variables one at a time but only considers variables the theory nominates, not a wide search over candidate predictors. The practical consequence is that a high R² here carries more evidential weight than in exploratory regression. Because the functional form and variable selection were fixed before the data were examined, high explanatory power is genuine evidence that the theory's causal story is correct — not merely that the curve fits.</p>
+<p><strong>The coefficient of determination R²</strong> (cited in the text as reaching 0.98 for the three-factor model) measures what fraction of the variance in the observed wage data is explained by the model. R² = 0 means the model explains nothing; R² = 1 means a perfect fit. An R² of 0.98 indicates that 98% of the historical variation in real wages is accounted for by the three factors — GDP per capita, labor demand/supply, and the cultural proxy — leaving only 2% unexplained.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

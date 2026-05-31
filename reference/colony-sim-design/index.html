@@ -1,0 +1,1355 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lentulus.github.io/MeridianUniverse/reference/colony-sim-design/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Colony Simulator — Design Document - Meridian Universe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#colony-simulator-design-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Meridian Universe" class="md-header__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Meridian Universe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Colony Simulator — Design Document
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Meridian Universe" class="md-nav__button md-logo" aria-label="Meridian Universe" data-md-component="logo">
+      
+  <img src="../../assets/images/empire.svg" alt="logo">
+
+    </a>
+    Meridian Universe
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FutureHistory/Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Developed Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/meridian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meridian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worlds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worlds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/colonymodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColonyModels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/worldmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorldMaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Models/3turchin-equations-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Behind the Colony Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colony_exportpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        colony_export.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="colony_export.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meridian-tables-queried" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meridian tables queried
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping formulas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON output format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colony-simhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        colony-sim.html
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="colony-sim.html">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monthly-step-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly step sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-groups-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter groups (sidebar)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-equations-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation equations (summary)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs-tracked-chart-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs tracked (chart series)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world-import-load-world-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        World import (Load World button)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-feedback-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key feedback loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibrated-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibrated defaults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-checklist-for-worlds-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transfer checklist for Worlds project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source references
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="colony-simulator-design-document">Colony Simulator — Design Document</h1>
+<p><strong>Files in this package</strong></p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>colony-sim.html</code></td>
+<td>Self-contained browser app — simulation engine + UI + chart</td>
+</tr>
+<tr>
+<td><code>colony_export.py</code></td>
+<td>CLI tool — queries Meridian Parquet DB, outputs world-parameter JSON</td>
+</tr>
+<tr>
+<td><code>colony-model.md</code></td>
+<td>Mathematical reference — full equation inventory with derivations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="purpose">Purpose</h2>
+<p>This system simulates the long-term growth and political stability of a settler
+colony on a habitable world many parsecs from Earth. It is designed as a
+referee tool for the <em>Worlds</em> wargame campaign: the simulator runs between
+sessions to advance the colony's state, and the outputs (Political Stress
+Indicator, Citizen Loyalty, debt load, etc.) feed into scenario generation and
+NPC disposition.</p>
+<p>Time unit throughout is <strong>months</strong>, matching the <em>World Tamer's Handbook</em>
+(WTH) monthly turn cycle. The model integrates three source frameworks:</p>
+<ul>
+<li><strong>WTH</strong> (TNE 0311) — four-sector colonial economy, satisfaction indices,
+  Political Track, monthly output roll</li>
+<li><strong>GURPS Realm Management</strong> — Realm Value, revenue, disruption events,
+  Management Skill, Habitability, Education Rating</li>
+<li><strong>Turchin 2013</strong> ("Modeling Social Pressures Toward Political Instability",
+  <em>Cliodynamics</em> 4.2) — structural-demographic Political Stress Indicator (PSI),
+  elite accumulation ODEs, wage model</li>
+</ul>
+<hr />
+<h2 id="colony_exportpy">colony_export.py</h2>
+<h3 id="what-it-does">What it does</h3>
+<p>Reads the Meridian static Parquet database (<code>~/projects/meridian/MeridianData</code>)
+and converts the physical properties of a selected world into a JSON file that
+can be imported directly into <code>colony-sim.html</code>. This is the bridge between
+the star-system database and the simulator.</p>
+<h3 id="dependency">Dependency</h3>
+<p>Requires <code>duckdb</code>. Since <code>duckdb</code> lives in the Meridian project venv, the
+easiest invocation is:</p>
+<pre><code>cd ~/projects/meridian
+uv run python /path/to/colony_export.py --system Sol --index 3
+</code></pre>
+<p>The <code>MERIDIAN</code> constant at the top of the script is the only path that needs
+updating when moving the tool.</p>
+<h3 id="modes">Modes</h3>
+<p><strong><code>--system NAME</code></strong>
+Lists every body in the named system that has physical data in Meridian
+(HZ-eligible bodies only, per Meridian's coverage policy). Output is a
+table with all derived colony parameters visible before selecting.</p>
+<pre><code>python colony_export.py --system Sol
+</code></pre>
+<pre><code>   #  body_id     system            world_type               atmosphere                       Hab  RVM   R_A   phi     p0  lmin×  season_mo
+   1   165930  Sol               Tiny (Rock)               None                               0    0   1.00  0.25  0.020    3.5        2.9
+   2   165931  Sol               Standard (Greenhouse)     Superdense/Suffocating/...        -2    1   1.00  0.78  0.030    3.0        7.4
+   3   165932  Sol               Standard (Garden)         Standard/Breathable                8    0   3.10  0.62  0.035    1.0       12.0
+   4   165933  Sol               Small (Rock)              None                               0    0   1.00  0.60  0.020    3.5       22.6
+</code></pre>
+<p><strong><code>--nearest-garden</code></strong>
+Finds the closest Garden worlds to Sol within a given radius and habitability
+floor, sorted by distance.</p>
+<pre><code>python colony_export.py --nearest-garden --max-dist-pc 15 --min-habitability 5
+</code></pre>
+<p><strong><code>--index N</code></strong>
+Added to either mode: emits one body as JSON to stdout instead of the table.
+Pipe or redirect to a <code>.json</code> file for import into the simulator.</p>
+<pre><code>python colony_export.py --system Sol --index 3 &gt; earth.json
+python colony_export.py --nearest-garden --min-habitability 5 --index 2 &gt; target.json
+</code></pre>
+<h3 id="meridian-tables-queried">Meridian tables queried</h3>
+<pre><code>systems/   — system_id, x_mpc/y_mpc/z_mpc, primary_name, dist_pc
+bodies/    — body_id, system_id, body_type, orbit_primary_au, in_hz, mass_kg
+physical/  — body_id, system_id, world_type, atmosphere_code, hydrographics,
+             avg_surface_temp_k, climate_type, volcanic_activity, tectonic_activity,
+             rotation_period_h, axial_tilt_deg, tidally_locked, rvm, habitability, affinity
+</code></pre>
+<p>The JOIN condition <code>p.system_id = s.system_id</code> is required on the physical
+table in addition to <code>p.body_id = b.body_id</code> because body_ids are
+sector-local sequential integers in the current Meridian build (they are not
+globally unique across sectors). The system_id IS globally unique.</p>
+<h3 id="mapping-formulas">Mapping formulas</h3>
+<table>
+<thead>
+<tr>
+<th>Meridian field</th>
+<th>JSON key</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>habitability</code> (0–19)</td>
+<td><code>Hab</code></td>
+<td>1:1</td>
+</tr>
+<tr>
+<td><code>rvm</code> (−3…+5)</td>
+<td><code>qM_mult</code></td>
+<td><code>2^(rvm/3)</code> — RVM 0 → 1×, −3 → 0.25×, +3 → 2.83×</td>
+</tr>
+<tr>
+<td><code>hydrographics</code>, <code>world_type</code>, <code>avg_surface_temp_k</code></td>
+<td><code>RA</code></td>
+<td>Garden: <code>clamp(1 + (hydro/100)×3×temp_factor, 1, 5)</code>; Ocean: ×1.5; other: 1.0; <code>temp_factor=1</code> if 5–35 °C, degrades outside</td>
+</tr>
+<tr>
+<td><code>axial_tilt_deg</code>, <code>tidally_locked</code></td>
+<td><code>phi_min</code></td>
+<td>Locked: 0.25; else <code>clamp(0.80 − tilt/90×0.70, 0.10, 0.90)</code></td>
+</tr>
+<tr>
+<td><code>atmosphere_code</code></td>
+<td><code>lmin_mult</code></td>
+<td>Breathable: 1.0; Marginal: 1.3; Suffocating: 1.7; Highly Toxic: 2.2; Lethally Toxic/Corrosive: 3.0; None/Trace: 3.5</td>
+</tr>
+<tr>
+<td><code>volcanic_activity</code>, <code>tectonic_activity</code></td>
+<td><code>p0</code></td>
+<td><code>0.020 + Δvol + Δtec</code>; delta: None=0, Light=0.005, Moderate=0.010, Heavy=0.020, Extreme=0.040</td>
+</tr>
+<tr>
+<td><code>orbit_primary_au</code></td>
+<td><code>season_period_months</code></td>
+<td><code>orbit_au^1.5 × 12</code> (Kepler, assumes FGK primary)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="json-output-format">JSON output format</h3>
+<pre><code class="language-json">{
+  &quot;_world&quot;: {
+    &quot;system&quot;: &quot;Sol&quot;,
+    &quot;body_id&quot;: 165932,
+    &quot;world_type&quot;: &quot;Standard (Garden)&quot;,
+    &quot;atmosphere&quot;: &quot;Standard/Breathable&quot;,
+    &quot;climate&quot;: &quot;Cool&quot;,
+    &quot;hydrographics&quot;: 70,
+    &quot;avg_surface_temp_c&quot;: 14.9,
+    &quot;axial_tilt_deg&quot;: 23.44,
+    &quot;rotation_period_h&quot;: 23.9,
+    &quot;tidally_locked&quot;: false,
+    &quot;volcanic_activity&quot;: &quot;Light&quot;,
+    &quot;tectonic_activity&quot;: &quot;Moderate&quot;,
+    &quot;rvm&quot;: 0,
+    &quot;habitability&quot;: 8,
+    &quot;affinity&quot;: 8,
+    &quot;orbit_au&quot;: 1.0
+  },
+  &quot;Hab&quot;: 8,
+  &quot;RA&quot;: 3.1,
+  &quot;phi_min&quot;: 0.62,
+  &quot;lmin_mult&quot;: 1.0,
+  &quot;p0&quot;: 0.035,
+  &quot;qM_mult&quot;: 1.0,
+  &quot;season_period_months&quot;: 12.0
+}
+</code></pre>
+<p><code>_world</code> is metadata for display; the remaining keys are simulator parameters.</p>
+<hr />
+<h2 id="colony-simhtml">colony-sim.html</h2>
+<p>A single self-contained HTML file. No server, no build step. Open in any
+modern browser. Requires internet access on first load only (fetches
+Chart.js 4.4 from CDN).</p>
+<h3 id="state">State</h3>
+<p>The simulation maintains two data structures:</p>
+<ul>
+<li><strong><code>history</code></strong> — array of monthly snapshots, one entry per step taken.
+  Each snapshot holds all derived outputs (N, G, w, Ψ, CL, etc.) and
+  internal carry-forwards (<code>_state</code>, <code>_Psi</code>, <code>_e_new</code>, <code>_Y_new</code>) needed to
+  advance to the next month.</li>
+<li><strong><code>params</code></strong> — read fresh from the input fields on every step, so parameter
+  changes mid-run take effect immediately (simulating policy interventions).</li>
+</ul>
+<h3 id="monthly-step-sequence">Monthly step sequence</h3>
+<p>Each step calls two functions:</p>
+<ol>
+<li>
+<p><strong><code>advanceState(prevSnap, params)</code></strong> — takes the previous snapshot and
+   produces a new bare state <code>{t, N, E, AC, IC, MC, PC, AL, IL, ML, Y, CL, PT, H}</code>.
+   This is where stochastic events fire: the d20 Political Roll, the disruption
+   probability check, and population growth.</p>
+</li>
+<li>
+<p><strong><code>computeSnapshot(state, history, params)</code></strong> — takes the bare state and
+   computes all derived quantities for charting and for feeding the next step.
+   This is deterministic given the state and params (except for the output roll η
+   which is drawn here).</p>
+</li>
+</ol>
+<p>The snapshot returned by <code>computeSnapshot</code> is appended to <code>history</code>, the chart
+is redrawn, and the state row at the bottom of the screen is updated.</p>
+<h3 id="parameter-groups-sidebar">Parameter groups (sidebar)</h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Key parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial State</td>
+<td>Starting N, E, capital units (AC/IC/MC), power (PC), labor assignments (AL/IL/ML), debt Y, Citizen Loyalty CL, Political Track PT, housing H</td>
+</tr>
+<tr>
+<td>Population &amp; Planet</td>
+<td>Annual growth rate r₀, working fraction λ, Habitability Hab, nutrition stress exponent κN, agricultural richness RA, growing season floor phi_min, youth fraction A₂₀₋₂₉, settlement fraction f_set, season cycle length (months/orbit)</td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>Sector yields q_A/q_I/q_M, minimum subsistence levels r_min/l_min, prices p_A/p_M/p_exp, materials export fraction, power demand per capital unit, Earth subsidy</td>
+</tr>
+<tr>
+<td>Labor &amp; Elite</td>
+<td>Max elite fraction s_max, mobility coefficient μ₀, welfare threshold w₀, wage elasticity β, Education Rating ER, base labor productivity P₀</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>Control Rating CR (2–6), Management Skill MS (−4…+4), loyalty gain per PT step α_PT, loyalty erosion per PSI unit α_Ψ, elite salary c_e, per-capita admin cost c_adm</td>
+</tr>
+<tr>
+<td>Disruptions</td>
+<td>Base disruption probability p₀, PSI sensitivity exponent κ, base response time τ₀, disruption severity</td>
+</tr>
+<tr>
+<td>Capital Values</td>
+<td>Credit value per unit of AC/IC/MC (for maintenance cost calculation)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="simulation-equations-summary">Simulation equations (summary)</h3>
+<p><strong>Production</strong> (per month, all sectors follow the same formula):</p>
+<pre><code>M_x = L_x                                    if L_x &lt; C_x   (labor-limited)
+M_x = min(C_x + 0.5·(L_x − C_x), 1.5·C_x)  if L_x ≥ C_x   (capital-limited)
+Q_A = q_A · M_A · R_A · φ(t) · η · pf       [rations/mo]
+Q_I = q_I · M_I · η · pf                     [cr/mo]
+Q_M = q_M · M_M · η · pf                     [t/mo]
+</code></pre>
+<p>Where <code>φ(t) = phi_min + (1−phi_min)·0.5·(1+sin(2π(t−season_months/4)/season_months))</code>
+is the seasonal modifier, <code>η ~ Uniform(0.80, 1.20)</code> is the WTH output roll,
+and <code>pf = min(1, PC/P_req)</code> is the power availability factor.</p>
+<p><strong>Satisfaction and welfare:</strong></p>
+<pre><code>S_N = Q_A / (N · r_min)     [nutrition: 1.0 = adequate]
+S_S = H / N                  [shelter:   1.0 = everyone housed]
+S_L = Q_I / (N · l_min)     [living:    1.0 = minimum standard]
+w   = (S_N + S_S + S_L) / 3  [composite welfare; w₀ = 1.0 is the neutral threshold]
+</code></pre>
+<p><strong>Elite dynamics</strong> (Turchin Eq. 4 simplified):</p>
+<pre><code>ė = μ₀ · (w₀ − w) / w
+ε = (1 − w·λ) / e            [relative elite income]
+</code></pre>
+<p>When w &lt; 1 (below threshold), elites accumulate. When e grows past s_max·N,
+each excess elite is a frustrated aspirant contributing to EMP.</p>
+<p><strong>Political Stress Indicator</strong> (Turchin Eq. 14 adapted):</p>
+<pre><code>MMP = w⁻¹ · f_set · A_young
+EMP = ε⁻¹ · (E / s_max·N)
+SFD = (Y / G_monthly) · (1 − CL)
+Ψ   = MMP × EMP × SFD
+</code></pre>
+<p><strong>Fiscal dynamics</strong> (monthly):</p>
+<pre><code>R_rev  = w_col · N · RF · 0.6          [RF from CR table]
+C_gov  = c_e · E + c_adm · N
+C_maint = 0.00417 · Σ(C_x · v_x)      [from month 120 only]
+T_rev  = p_exp · X(t−24)               [trade revenue, 24-month lag]
+ΔY     = C_gov + C_maint − R_rev − T_rev − I_Earth
+</code></pre>
+<p><strong>Population growth</strong> (monthly):</p>
+<pre><code>ΔN = (r₀/12) · h(Hab) · σ(S_N) · N
+</code></pre>
+<p>where <code>h(Hab) = Hab/10</code> and <code>σ(S_N) = min(S_N, 1)^κN</code>.</p>
+<p><strong>Stochastic events</strong> (per step):
+- <strong>Political Roll</strong>: d20 + PT + MS → PT improves/degrades ±1 at extremes
+- <strong>Disruption</strong>: probability <code>p_dis = p₀ · Ψ^κ</code>; types (Plague, Famine,
+  Corruption, Political Schism, Troublesome Flora/Fauna) have different
+  effects on N, CL, PT
+- <strong>Citizen Loyalty update</strong>: <code>CL += α_PT·ΔPT − α_Ψ·Ψ + CL_shock</code></p>
+<h3 id="outputs-tracked-chart-series">Outputs tracked (chart series)</h3>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Keys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Population</td>
+<td>N, E, e (elite fraction), A_young</td>
+</tr>
+<tr>
+<td>Welfare</td>
+<td>w, S_N, S_S, S_L</td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>G (annual GDP), Q_A, Q_I, Q_M, T_export, R_rev</td>
+</tr>
+<tr>
+<td>Fiscal</td>
+<td>Y (debt), Y_G (debt/monthly-GDP ratio)</td>
+</tr>
+<tr>
+<td>Politics</td>
+<td>Ψ (PSI), MMP, EMP, SFD, CL, PT, D (distrust)</td>
+</tr>
+<tr>
+<td>Elites</td>
+<td>ε (elite income), overproduction (E/S_pos)</td>
+</tr>
+</tbody>
+</table>
+<p>Any combination can be plotted simultaneously. Two chart options:
+- <strong>Normalize to t=0</strong> — indexes all selected series to 1.0 at month 0,
+  enabling growth-rate comparison across differently-scaled outputs
+- <strong>Log Y axis</strong> — useful when population and PSI are on the same chart</p>
+<h3 id="world-import-load-world-button">World import (Load World button)</h3>
+<p>Accepts a <code>.json</code> file produced by <code>colony_export.py</code>. On load it sets:</p>
+<table>
+<thead>
+<tr>
+<th>JSON key</th>
+<th>Simulator input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hab</code></td>
+<td>Habitability (0–19)</td>
+</tr>
+<tr>
+<td><code>RA</code></td>
+<td>Agricultural richness (1–5)</td>
+</tr>
+<tr>
+<td><code>phi_min</code></td>
+<td>Growing season floor</td>
+</tr>
+<tr>
+<td><code>lmin_mult</code></td>
+<td>l_min × multiplier (life-support cost)</td>
+</tr>
+<tr>
+<td><code>p0</code></td>
+<td>Disruption base probability</td>
+</tr>
+<tr>
+<td><code>qM_mult</code></td>
+<td>q_M × multiplier (RVM effect on materials yield)</td>
+</tr>
+<tr>
+<td><code>season_period_months</code></td>
+<td>Season cycle length (replaces hardcoded 12)</td>
+</tr>
+</tbody>
+</table>
+<p>A world info bar appears at the top of the main panel showing the system name,
+world type, temperature, atmosphere, habitability, RVM, axial tilt, and orbit.</p>
+<p>Parameters not set by the import (population, capital, labor allocation,
+debt, etc.) retain their current sidebar values. The user can adjust those
+before clicking Reset to start a fresh run on the new world.</p>
+<hr />
+<h2 id="key-feedback-loops">Key feedback loops</h2>
+<ol>
+<li><strong>Low-welfare spiral</strong> — w↓ → ė↑ → e↑ → ε↓ → EMP↑ → Ψ↑ → CL↓ → D↑ → SFD↑ → Ψ↑↑</li>
+<li><strong>Fiscal trap</strong> — Y↑ → Y/G↑ → SFD↑ → Ψ↑ → disruptions↑ → production↓ → G↓ → Y/G↑↑</li>
+<li><strong>Elite saturation</strong> — w↓ → mobility↑ → E &gt; S_pos → EMP↑ → Ψ↑</li>
+<li><strong>Trade-lag oscillator</strong> — surplus at t → exports → revenue arrives at t+24; conditions
+   may have reversed in the interval, creating a fiscal lag cycle</li>
+<li><strong>Stabilising loop</strong> — good PT rolls → PT↑ → CL↑ → D↓ → SFD↓ → Ψ↓</li>
+</ol>
+<hr />
+<h2 id="calibrated-defaults">Calibrated defaults</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r₀</td>
+<td>0.02 y⁻¹</td>
+<td>WTH (2% annual growth)</td>
+</tr>
+<tr>
+<td>λ</td>
+<td>0.55</td>
+<td>Working-age population fraction</td>
+</tr>
+<tr>
+<td>s_max</td>
+<td>0.05</td>
+<td>GURPS RM (1 elite per 20 colonists)</td>
+</tr>
+<tr>
+<td>μ₀</td>
+<td>0.005 mo⁻¹</td>
+<td>Turchin, rescaled</td>
+</tr>
+<tr>
+<td>w₀</td>
+<td>1.0</td>
+<td>Neutral welfare threshold</td>
+</tr>
+<tr>
+<td>β</td>
+<td>0.5</td>
+<td>Turchin Eq. 9 wage elasticity</td>
+</tr>
+<tr>
+<td>Capital maintenance</td>
+<td>0.417%/mo from month 120</td>
+<td>WTH (5%/yr, starts year 10)</td>
+</tr>
+<tr>
+<td>Trade lag Δ</td>
+<td>24 months</td>
+<td>Setting (1-year transit each way)</td>
+</tr>
+<tr>
+<td>RF (CR 4)</td>
+<td>0.20</td>
+<td>GURPS RM Revenue Factor table</td>
+</tr>
+<tr>
+<td>Disruption p₀</td>
+<td>0.02/mo</td>
+<td>GURPS RM, at Ψ = 1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="transfer-checklist-for-worlds-project">Transfer checklist for Worlds project</h2>
+<ul>
+<li>[ ] Copy <code>colony-sim.html</code>, <code>colony_export.py</code>, <code>colony-model.md</code> into Worlds</li>
+<li>[ ] Update <code>MERIDIAN</code> constant in <code>colony_export.py</code> if Meridian path changes</li>
+<li>[ ] <code>colony-sim.html</code> has no external dependencies except Chart.js from CDN —
+      it works offline once that script is cached (or bundle it locally)</li>
+<li>[ ] <code>colony_export.py</code> requires <code>duckdb</code>; add to Worlds project dependencies</li>
+<li>[ ] <code>colony-model.md</code> is the mathematical reference; no code depends on it</li>
+<li>[ ] The <code>_world</code> metadata block in the exported JSON is display-only;
+      the simulation uses only the six parameter keys (<code>Hab</code>, <code>RA</code>, <code>phi_min</code>,
+      <code>lmin_mult</code>, <code>p0</code>, <code>qM_mult</code>, <code>season_period_months</code>)</li>
+</ul>
+<hr />
+<h2 id="source-references">Source references</h2>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Full citation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3turchin</strong></td>
+<td>Turchin, P. (2013). "Modeling Social Pressures Toward Political Instability." <em>Cliodynamics</em> 4(2): 241–280</td>
+</tr>
+<tr>
+<td><strong>WTH</strong></td>
+<td><em>World Tamer's Handbook</em>, TNE 0311 (GDW). Ch. 4 (Colonial Economics), Ch. 5 (Monthly Turn)</td>
+</tr>
+<tr>
+<td><strong>GURPS RM</strong></td>
+<td><em>GURPS Realm Management</em> (Steve Jackson Games). Ch. 1–2 (Realm Value, Revenue, Disruptions, RTM, Habitability, Education Rating)</td>
+</tr>
+<tr>
+<td><strong>Meridian</strong></td>
+<td>Static Parquet reference DB, <code>~/projects/meridian</code>. ATHYG v3.3 + synthetic bodies, GURPS Space 4e world-physical generation rules</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
