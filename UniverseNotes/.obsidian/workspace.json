@@ -11,14 +11,12 @@
             "id": "08122fdcc5ab8936",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "FutureHistory/Future.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/images/empire.svg"
               },
-              "icon": "lucide-file",
-              "title": "Future"
+              "icon": "lucide-image",
+              "title": "empire"
             }
           }
         ],
@@ -95,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "FutureHistory/Future.md",
+                "file": "assets/images/empire.svg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Future"
+              "title": "Backlinks for empire"
             }
           },
           {
@@ -186,8 +184,10 @@
   },
   "active": "08122fdcc5ab8936",
   "lastOpenFiles": [
-    "FutureHistory/future-history-tech-levels.md",
+    "assets/images/GWmap.png",
+    "assets/images/map_with_scale.jpeg",
     "FutureHistory/Future.md",
+    "FutureHistory/future-history-tech-levels.md",
     "FutureHistory/GWmap.png",
     "GWmap.png",
     "Projects/colonymodels.md",
@@ -214,7 +214,6 @@
     "Models/turchin-equations.md",
     "Models",
     "reference/colony-sim-design.md",
-    "assets/images/map_with_scale.jpeg",
     "reference",
     "assets/images/empire.svg",
     "about.md",
